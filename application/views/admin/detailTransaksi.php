@@ -35,63 +35,109 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Data Transaksi</h1>
+            <h1 class="h3 mb-0 text-gray-800"> Detail Transaksi</h1>
           </div>
 
-
+          <!-- Content Row -->
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-4">
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Mengelolah Data Transaksi</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
                   </div>
                   <div class="card-body">
                       <div class="col-lg-6">
                       <form>
-                          <a href="<?php echo base_url('admin/Home/detailtransaksi'); ?>" class="btn btn-success btn-rounded">Tambah Transaksi</a>
+                          <a href="#" class="btn btn-success btn-rounded">Tambah</a>
+                      </form>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Treatment</h6>
+                  </div>
+                  <div class="card-body">
+                      <div class="col-lg-12">
+                      <form>
+                          <div class="form-group">
+                              <div class="row">
+                              <div class="col-lg-8">
+                              <input type="text" name="namamenu" class="form-control" id="exampleFormControlInput1" placeholder="Menu">
+                              </div>
+                              <div class="col-lg-2">
+                              <a href="#" class="btn btn-success btn-rounded">Cari</a>
+                              </div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" name="qty" class="form-control" id="exampleFormControlInput1" placeholder="Jumlah">
+                              <a href="#" class="btn btn-success btn-rounded mt-3">Tambah</a>
+                          </div>
+                      </form>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">TOTAL</h6>
+                  </div>
+                  <div class="card-body">
+                      <div class="col-lg-6">
+
+                      <form>
+                          <a href="#" class="btn btn-success btn-rounded">Tambah</a>
                       </form>
                       </div>
                   </div>
                 </div>
             </div>
           </div>
-          <!-- Content Row -->
-          <div class="row ">
+          <div class="row">
             <div class="col-lg-12">
               <!-- DataTales Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tabel Transaksi</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Tabel Detail Transaksi</h6>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Id Admin</th>
-                          <th>Nama Admin</th>
-                          <th>Username</th>
-                          <th>No. Telepon</th>
+                          <th>Invoice</th>
+                          <th>Nama</th>
                           <th>Alamat</th>
-                          <th>Level</th>
+                          <th>No.Hp</th>
+                          <th>Jenis Treatment</th>
+                          <th>Jumlah Sepatu</th>
+                          <th>Tgl. Order</th>
+                          <th>Tgl. Selesai</th>
+                          <th>Catatan</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
-                          <td>McGlenmor</td>
-                          <td>mckacih</td>
-                          <td>087776767550</td>
-                          <td>jl.lingsirwengi no.99</td>
-                          <td>Kasir</td>
+                          <td>0001</td>
+                          <td>Suprememan</td>
+                          <td>jl.kemaraupanjang no.212</td>
+                          <td>082128827676</td>
+                          <td>Deep clean</td>
+                          <td>2</td>
+                          <td>22-10-2019</td>
+                          <td>23-10-2019</td>
+                          <td>Tolong kembaliannya tidak disumbangkan walau hanya 100 rupiah</td>
                           <td>
                               <div class="row justify-content-center">
                                 <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
                                 <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>
-                        </tr>
                         </tr>
                       </tbody>
                     </table>
@@ -100,6 +146,7 @@
               </div>
             </div>
           </div>
+
         </div>
         <!-- /.container-fluid -->
 
@@ -139,6 +186,17 @@
   </div>
 
   <?php $this->load->view('admin/res/script'); ?>
+
+  <script type="text/javascript">
+  function myFunction() {
+  var x = document.getElementById("seePass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+  </script>
 
 </body>
 

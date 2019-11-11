@@ -20,6 +20,8 @@ class Home extends CI_Controller {
 		$this->load->view('admin/pegawai');
 	}
 
+	//TREATMENT
+
 	public function menu()
 		{
 			$data['datatreatment']=$this->m_treatment->list_treatment();
@@ -32,6 +34,8 @@ class Home extends CI_Controller {
 		$this->load->view('admin/tambahMenu');
 	}
 
+	//PEGAWAI
+
 	public function listPegawai()
 	{
 		$this->load->view('admin/listPegawai');
@@ -42,13 +46,22 @@ class Home extends CI_Controller {
 		$this->load->view('admin/tambahPegawai');
 	}
 
+	//LAPORAN
+
 	public function laporanHarian()
 	{
 		$this->load->view('admin/laporanHarian');
 	}
 
+	//TRANSAKSI
+
 	function transaksi()
 	{
 		$this->load->view('admin/transaksi');
+	}
+
+	function detailTransaksi()
+	{
+		$this->load->view('admin/detailTransaksi');
 	}
 }
