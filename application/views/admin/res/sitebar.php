@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Tabel -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('admin/Home/menu') ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/treatment') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Tabel Treatment</span></a>
       </li>

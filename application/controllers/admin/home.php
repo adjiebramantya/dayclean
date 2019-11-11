@@ -19,20 +19,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('admin/pegawai');
 	}
-
-	//TREATMENT
-
-	public function menu()
-		{
-			$data['datatreatment']=$this->m_treatment->list_treatment();
-			$this->load->view('admin/menu',$data);
-			
-		}
-
-	public function tambahMenu()
-	{
-		$this->load->view('admin/tambahMenu');
-	}
+	
 
 	//PEGAWAI
 
