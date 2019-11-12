@@ -48,7 +48,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-lg-6">
-                      <form action="<?php  echo base_url('index.php/treatment/aksi_tambahTreatment'); ?>" method="POST" enctype="multipart/form-data">
+                      <form action="<?php  echo base_url('index.php/treatment/tambahTreatment'); ?>" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Jenis Treatment</label>
                               <input type="text" name="namatreatment" class="form-control" id="exampleFormControlInput1" placeholder="">

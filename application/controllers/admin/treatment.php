@@ -18,16 +18,11 @@ class treatment extends CI_Controller {
 
 	public function tambahTreatment()
 	{	
-		$this->load->view('admin/tambahTreatment');
-	}
-
-	public function aksi_tambahTreatment()
-	{	
-		/**$this->m_treatment->rulesNew();
+		$this->m_treatment->rulesNew();
 
 		if($this->form_validation->run() == false){
 			$this->load->view('admin/tambahTreatment');
-		} else{**/
+		} else{
 
 		$namatreatment = $this->input->post('namatreatment');
 		$deskripsi = $this->input->post('deskripsi');
@@ -40,7 +35,29 @@ class treatment extends CI_Controller {
 			);
 			$this->m_treatment->input_treatment($data,'treatment');
 			redirect('admin/treatment');
-		//}
+		}
+	}
+
+	public function aksi_tambahTreatment()
+	{	
+		/**$this->m_treatment->rulesNew();
+
+		if($this->form_validation->run() == false){
+			$this->load->view('admin/tambahTreatment');
+		} else{
+
+		$namatreatment = $this->input->post('namatreatment');
+		$deskripsi = $this->input->post('deskripsi');
+		$harga = $this->input->post('harga');
+
+			$data = array(
+				'nama_treatment' => $namatreatment,
+				'deskripsi' => $deskripsi,
+				'harga' => $harga
+			);
+			$this->m_treatment->input_treatment($data,'treatment');
+			redirect('admin/treatment');
+		}**/
 	} 
 
 	function edit($id_treatment)
