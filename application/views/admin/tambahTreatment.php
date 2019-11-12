@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>DayClean - Tambah Menu</title>
+  <title>DayClean - Tambah Treatment</title>
 
 <?php $this->load->view('admin/res/lib'); ?>
 
@@ -62,7 +62,7 @@
                               <input type="text" name="harga" class="form-control" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="row justify-content-center">
-                          <a href="<?php echo base_url('admin/Home/menu'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
+                          <a href="<?php echo base_url('admin/Treatment'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
                           <button type="button" class="btn btn-success btn-rounded mt-2">Simpan</button>
                           </div>
                       </form>

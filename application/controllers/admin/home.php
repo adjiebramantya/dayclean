@@ -7,8 +7,6 @@ class Home extends CI_Controller {
 		{
 			parent::__construct();
 
-			$this->load->model("m_treatment");
-
 		}
 	public function index()
 	{
@@ -20,18 +18,6 @@ class Home extends CI_Controller {
 		$this->load->view('admin/pegawai');
 	}
 	
-
-	//PEGAWAI
-
-	public function listPegawai()
-	{
-		$this->load->view('admin/listPegawai');
-	}
-
-	public function tambahPegawai()
-	{
-		$this->load->view('admin/tambahPegawai');
-	}
 
 	//LAPORAN
 

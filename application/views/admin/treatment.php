@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>DayClean - Menu</title>
+  <title>DayClean - Treatment</title>
 
 <?php $this->load->view('admin/res/lib'); ?>
 
@@ -48,7 +48,7 @@
                   <div class="card-body">
                       <div class="col-lg-6">
                       <form>
-                          <a href="<?php echo base_url('admin/Home/tambahMenu'); ?>" class="btn btn-success btn-rounded">Tambah Treatment</a>
+                          <a href="<?php echo base_url('admin/treatment/tambahTreatment'); ?>" class="btn btn-success btn-rounded">Tambah Treatment</a>
                       </form>
                       </div>
                   </div>
