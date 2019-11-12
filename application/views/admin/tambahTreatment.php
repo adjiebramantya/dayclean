@@ -48,14 +48,14 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-lg-6">
-                      <form>
+                      <form action="<?php  echo base_url('index.php/treatment/aksi_tambahTreatment'); ?>" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Jenis Treatment</label>
-                              <input type="text" name="namamenu" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              <input type="text" name="namatreatment" class="form-control" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Deskripsi</label>
-                              <input type="text" name="namamenu" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              <input type="text" name="deskripsi" class="form-control" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Harga</label>
@@ -63,7 +63,7 @@
                           </div>
                           <div class="row justify-content-center">
                           <a href="<?php echo base_url('admin/Treatment'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
-                          <button type="button" class="btn btn-success btn-rounded mt-2">Simpan</button>
+                          <button type="submit" class="btn btn-success btn-rounded mt-2">Simpan</button>
                           </div>
                       </form>
                       </div>

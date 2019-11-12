@@ -23,7 +23,24 @@ class treatment extends CI_Controller {
 
 	public function aksi_tambahTreatment()
 	{	
-		
+		/**$this->m_treatment->rulesNew();
+
+		if($this->form_validation->run() == false){
+			$this->load->view('admin/tambahTreatment');
+		} else{**/
+
+		$namatreatment = $this->input->post('namatreatment');
+		$deskripsi = $this->input->post('deskripsi');
+		$harga = $this->input->post('harga');
+
+			$data = array(
+				'nama_treatment' => $namatreatment,
+				'deskripsi' => $deskripsi,
+				'harga' => $harga
+			);
+			$this->m_treatment->input_treatment($data,'treatment');
+			redirect('admin/treatment');
+		//}
 	} 
 
 	function edit($id_treatment)

@@ -28,9 +28,33 @@
 			$this->db->insert($table,$data);
 		}
 
-		function hapus_treatment($where,$table){
+		function hapus_treatment($where,$table)
+		{
 			$this->db->where($where);
 			$this->db->delete($table);
+		}
+
+		function rulesNew()
+		{
+			$data=[
+			[
+				'field'=>'namatreatment',
+				'label'=>'Jenis Treatment',
+				'rules'=>'required'
+			],
+			[
+				'field'=>'deskripsi',
+				'label'=>'Deskripsi',
+				'rules'=>'required'
+			],
+			[
+				'field'=>'harga',
+				'label'=>'Harga',
+				'rules'=>'required'
+			]
+			];
+
+			$this->form_validation->set_rules($data);
 		}
 	}
 ?>
