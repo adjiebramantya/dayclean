@@ -51,15 +51,15 @@
                       <form action="<?php  echo base_url('admin/treatment/tambahTreatment'); ?>" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Jenis Treatment</label>
-                              <input type="text" name="namatreatment" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              <input type="text" name="namatreatment" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Deskripsi</label>
-                              <input type="text" name="deskripsi" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              <input type="text" name="deskripsi" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Harga</label>
-                              <input type="text" name="harga" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              <input type="text" name="harga" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                           </div>
                           <div class="row justify-content-center">
                           <a href="<?php echo base_url('admin/treatment'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
