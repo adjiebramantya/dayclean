@@ -78,13 +78,26 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php 
+                        foreach ($listpegawai->result_array() as $m):
+                              $id_pegawai=$m['id_pegawai'];
+
+                              $nm_pegawai=$m['nm_pegawai'];
+
+                              $alamat_pegawai=$m['alamat_pegawai'];
+
+                              $no_hp=$m['no_hp'];
+
+                              $level=$m['level'];
+
+
+                        ?>
                         <tr>
-                          <td>1</td>
-                          <td>McGlenmor</td>
-                          <td>mckacih</td>
-                          <td>087776767550</td>
-                          <td>jl.lingsirwengi no.99</td>
-                          <td>Kasir</td>
+                          <td><?php echo $id_pegawai."<br>"; ?></td>
+                          <td><?php echo $nm_pegawai."<br>"; ?></td>
+                          <td><?php echo $alamat_pegawai."<br>"; ?></td>
+                          <td><?php echo $no_hp."<br>"; ?></td>
+                          <td><?php echo $level."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
                                 <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
@@ -93,6 +106,7 @@
                           </td>
                         </tr>
                         </tr>
+                        <?php endforeach;?>
                       </tbody>
                     </table>
                   </div>

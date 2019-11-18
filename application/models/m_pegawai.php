@@ -7,7 +7,7 @@
 		//data_treatment:
 		function list_pegawai()
 		{
-			$hasil=$this->db->query("SELECT id_pegawai,nm_pegawai,alamat_pegawai,no_hp FROM pegawai");
+			$hasil=$this->db->query("SELECT id_pegawai,nm_pegawai,alamat_pegawai,no_hp,level FROM pegawai");
 
             return $hasil;
 		}

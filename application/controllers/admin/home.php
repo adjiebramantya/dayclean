@@ -12,11 +12,6 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('admin/index');
 	}
-
-	public function pegawai()
-	{
-		$this->load->view('admin/pegawai');
-	}
 	
 
 	//LAPORAN

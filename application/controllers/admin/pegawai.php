@@ -12,7 +12,7 @@ class pegawai extends CI_Controller {
 		}
 	public function index()
 	{
-		$data['datapegawai']=$this->m_pegawai->list_pegawai();
+		$data['listpegawai']=$this->m_pegawai->list_pegawai();
 		$this->load->view('admin/listPegawai',$data);
 	}
 

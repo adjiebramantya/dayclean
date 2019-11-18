@@ -34,7 +34,7 @@
           <span>Data Admin</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('admin/Home/listPegawai') ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/pegawai') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>List Admin</span></a>
       </li>
