@@ -48,26 +48,34 @@
                   <div class="card-body">
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
-                      <form>
+                      <form action="<?php  echo base_url('admin/pegawai/aksi_tambahpegawai'); ?>" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Nama Pegawai</label>
-                              <input type="namapegawai" class="form-control" id="exampleFormControlInput1" placeholder="">
-                          </div>
-                          <div class="form-group">
-                              <label for="exampleFormControlInput1">Username</label>
-                              <input type="nomertelepon" class="form-control" id="exampleFormControlInput1" readonly="" placeholder="">
+                              <input type="text" name="nm_pegawai" class="form-control" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Alamat</label>
-                              <input type="alamat" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              <input type="text" name="alamat_pegawai" class="form-control" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="form-group">
-                              <label for="exampleFormControlInput1">Nomer Telepon</label>
-                              <input type="nomertelepon" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              <label for="exampleFormControlInput1">No Hp</label>
+                              <input type="text" name="no_hp" class="form-control" id="exampleFormControlInput1" placeholder="">
+                          </div>
+                          <div class="form-group col-md-4">
+                              <label for="inputLevel">Level</label>
+                                  <select id="inputState" class="form-control" name="level">
+                                      <option selected>Pilih Level</option>
+                                      <option>Pegawai 1</option>
+                                      <option>Pegawai 2</option>
+                                  </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="exampleFormControlInput1">Username</label>
+                              <input type="text" name="username" class="form-control" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="form-group">
                               <label>Password</label>
-                              <input class="form-control" type="password" id="seePass">
+                              <input class="form-control" type="password" name="password" id="seePass">
                           </div>
                           <div class="form-group">
                               <input type="checkbox" onclick="myFunction()"> Show Password
