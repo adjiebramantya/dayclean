@@ -54,7 +54,7 @@
                     <a class="page-scroll" href="<?php echo base_url('user/home') ?>">Beranda</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="<?php echo base_url('user/home/order') ?>">ORDER NOW!!</a>
+                    <a class="page-scroll" href="<?php echo base_url('user/order') ?>">ORDER NOW!!</a>
                   </li>
                 </ul>
               </div>
@@ -83,30 +83,39 @@
           <div class="col-sm-6 col-md-offset-3">
             <form>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Nama Pegawai</label>
-                    <input type="text" name="namapegawai" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <label for="exampleFormControlInput1">Id order</label>
+                    <input type="text" name="id_order" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Username</label>
-                    <input type="text" name="nomertelepon" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <label for="exampleFormControlInput1">Tanggal Order</label>
+                    <input type="text" name="tanggal" class="form-control" id="exampleFormControlInput1" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nama customer</label>
+                    <input type="text" name="nama_user" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Alamat</label>
-                    <input type="text" name="alamat" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input type="text" name="alamat_user" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nomer Telepon</label>
-                    <input type="text" name="nomertelepon" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input type="text" name="no_hp" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
-                    <input class="form-control" type="password" id="seePass">
+                    <label for="exampleFormControlInput1">Treatment</label>
+                    <input type="text" name="treatment" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" onclick="myFunction()"> Show Password
+                    <label for="exampleFormControlInput1">Jumlah Sepatu</label>
+                    <input type="text" name="jumlah_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Catatan</label>
+                    <input type="" name="catatan" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Catatan Jika anda order beberapa Treatment yang berbeda">
                 </div>
                 <div class="row justify-content-center">
-                <a href="<?php echo base_url('admin/Home/listPegawai'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
+                <a href="<?php echo base_url('user/home'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
                 <button type="button" class="btn btn-success btn-rounded mt-2">Simpan</button>
                 </div>
             </form>
