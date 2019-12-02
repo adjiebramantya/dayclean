@@ -70,9 +70,8 @@
                         <tr>
                           <th>Id Admin</th>
                           <th>Nama Admin</th>
-                          <th>Username</th>
-                          <th>No. Telepon</th>
                           <th>Alamat</th>
+                          <th>No. Telepon</th>
                           <th>Level</th>
                           <th>Action</th>
                         </tr>
@@ -100,8 +99,8 @@
                           <td><?php echo $level."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
-                                <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
-                                <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                <a href="<?php echo base_url('admin/pegawai/editPegawai/'.$id_pegawai); ?>" class="btn btn-info btn-circle">Edit<i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
+                                <a href="#" class="btn btn-danger btn-circle">Hapus<i class="fas fa-trash"></i></a>
                               </div>
                           </td>
                         </tr>

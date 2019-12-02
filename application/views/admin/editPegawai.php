@@ -48,44 +48,64 @@
                   <div class="card-body">
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
-                      <form action="<?php  echo base_url('admin/pegawai/aksi_tambahpegawai'); ?>" method="POST" enctype="multipart/form-data">
-                          <div class="form-group">
-                              <label for="exampleFormControlInput1">Nama Pegawai</label>
-                              <input type="text" name="nm_pegawai" class="form-control" id="exampleFormControlInput1" placeholder="">
+                      <?php foreach($ubahpegawai as $row){?>
+                        <form action="<?php echo base_url().'admin/pegawai/editPegawai'; ?>" method="POST" enctype="multipart/form-data">
+                          <div class="form-group row" hidden>
+                            <label for="edit1" class="col-sm-2 col-form-label">ID Pegawai</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="id_pegawai" class="form-control" value="<?php echo $row->id_pegawai ?>">
+                              </div>
                           </div>
-                          <div class="form-group">
-                              <label for="exampleFormControlInput1">Alamat</label>
-                              <input type="text" name="alamat_pegawai" class="form-control" id="exampleFormControlInput1" placeholder="">
+                          <div class="form-group row">
+                            <label for="edit2" class="col-sm-2 col-form-label">Nama Pegawai</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="nm_pegawai" class="form-control" value="<?php echo $row->nm_pegawai; ?>">
+                              </div>
                           </div>
-                          <div class="form-group">
-                              <label for="exampleFormControlInput1">No Hp</label>
-                              <input type="text" name="no_hp" class="form-control" id="exampleFormControlInput1" placeholder="">
+                          <div class="form-group row">
+                            <label for="edit3" class="col-sm-2 col-form-label">Alamat Pegawai</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="alamat_pegawai" class="form-control" value="<?php echo $row->alamat_pegawai; ?>">
+                              </div>
                           </div>
-                          <div class="form-group col-md-4">
-                              <label for="inputLevel">Level</label>
-                                  <select id="inputState" class="form-control" name="level">
+                          <div class="form-group row">
+                            <label for="edit4" class="col-sm-2 col-form-label">No. HP</label>
+                              <div class="col-sm-10">
+                                <input type="number" name="no_hp" class="form-control" value="<?php echo $row->no_hp; ?>">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="edit5" class="col-sm-2 col-form-label">level</label>
+                                  <select id="inputState" class="form-control" name="level" value="<?php echo $row->level; ?>">
                                       <option selected>Pilih Level</option>
                                       <option>Pegawai 1</option>
                                       <option>Pegawai 2</option>
                                   </select>
                           </div>
-                          <div class="form-group">
-                              <label for="exampleFormControlInput1">Username</label>
-                              <input type="text" name="username" class="form-control" id="exampleFormControlInput1" placeholder="">
+                          <div class="form-group row">
+                            <label for="edit6" class="col-sm-2 col-form-label">Username</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="username" class="form-control" value="<?php echo $row->username; ?>">
+                              </div>
                           </div>
-                          <div class="form-group">
-                              <label>Password</label>
-                              <input class="form-control" type="password" name="password" id="seePass">
+                          <div class="form-group row">
+                            <label for="edit7" class="col-sm-2 col-form-label">Password</label>
+                              <div class="col-sm-10">
+                                <input type="password" name="password" class="form-control" value="<?php echo $row->password; ?>">
+                              </div>
                           </div>
                           <div class="form-group">
                               <input type="checkbox" onclick="myFunction()"> Show Password
                           </div>
-                          <div class="row justify-content-center">
-                          <button type="submit" class="btn btn-success btn-rounded mr-3 mt-2">Simpan</button>
-                          <a href="<?php echo base_url('admin/Home'); ?>" class="btn btn-danger btn-rounded  mt-2">Batal</a>
-                          
+
                           </div>
-                      </form>
+                          
+                          <div class="form-group row">
+                            <button type="submit" class="btn btn-success" value="simpan" name="save" style="margin-left: 200px;">Simpan</button>
+                            
+                          </div>
+                        </form>
+                        <?php } ?>
                       </div>
                     </div>
                   </div>
