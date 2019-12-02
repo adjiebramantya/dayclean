@@ -84,11 +84,11 @@
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Id order</label>
-                    <input type="text" name="id_order" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input type="text" name="id_order" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?= $kode ?>">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Tanggal Order</label>
-                    <input type="text" name="tanggal" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input type="text" name="tanggal" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?= $tanggal ?>">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nama customer</label>
@@ -112,12 +112,16 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Catatan</label>
-                    <input type="" name="catatan" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Catatan Jika anda order beberapa Treatment yang berbeda">
+                    <textarea name="catatan" class="form-control" placeholder="Masukkan Catatan Jika anda order beberapa Treatment yang berbeda" rows="5"></textarea>
                 </div>
-                <div class="row justify-content-center">
-                <a href="<?php echo base_url('user/home'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
-                <button type="button" class="btn btn-success btn-rounded mt-2">Simpan</button>
+                <div class="row ">
+                <button type="button" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Simpan</button>
                 </div>
+
+                <!-- button:hover {
+  background-color: #fff;
+  border: 1px solid #333;
+  color: #333;-->
             </form>
           </div>
         </div>
