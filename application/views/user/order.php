@@ -82,9 +82,9 @@
       <div class="row">
           <div class="col-sm-6 col-md-offset-3">
             <form>
-                <div class="form-group" hidden>
+                <div class="form-group">
                     <label for="exampleFormControlInput1">Id order</label>
-                    <input type="text" name="id_order" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?= $kode ?>">
+                    <input type="text" name="id_order" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?= $kode ?>" disabled>
                 </div>
                 <div class="form-group" hidden>
                     <label for="exampleFormControlInput1">Tanggal Order</label>
