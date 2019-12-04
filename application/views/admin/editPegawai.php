@@ -49,7 +49,7 @@
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
                       <?php foreach($ubahpegawai as $row){?>
-                        <form action="<?php echo base_url().'admin/pegawai/editPegawai'; ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?php echo base_url().'admin/pegawai/updatePegawai'; ?>" method="POST" enctype="multipart/form-data">
                           <div class="form-group row" hidden>
                             <label for="edit1" class="col-sm-2 col-form-label">ID Pegawai</label>
                               <div class="col-sm-10">
@@ -98,12 +98,14 @@
                               <input type="checkbox" onclick="myFunction()"> Show Password
                           </div>
 
-                          </div>
-                          
                           <div class="form-group row">
                             <button type="submit" class="btn btn-success" value="simpan" name="save" style="margin-left: 200px;">Simpan</button>
                             
                           </div>
+
+                          </div>
+                          
+                          
                         </form>
                         <?php } ?>
                       </div>

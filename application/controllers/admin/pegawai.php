@@ -49,7 +49,7 @@ class pegawai extends CI_Controller {
 			$this->load->view('admin/editPegawai',$data);
 		}
 
-	function update()
+	function updatePegawai()
 		{
 			$id_pegawai = $this->input->post('id_pegawai');
 			$nm_pegawai = $this->input->post('nm_pegawai');
@@ -73,6 +73,13 @@ class pegawai extends CI_Controller {
 			);
 
 			$this->m_pegawai->update_pegawai($where,$data,'pegawai');
+			redirect('admin/pegawai');
+		}
+
+		function hapusPegawai($id_pegawai)
+		{
+			$where = array('id_pegawai' => $id_pegawai);
+			$this->m_pegawai->hapus_pegawai($where,'pegawai');
 			redirect('admin/pegawai');
 		}
 }
