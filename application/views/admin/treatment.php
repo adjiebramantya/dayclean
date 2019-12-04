@@ -94,11 +94,29 @@
                           <td><?php echo $harga."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
-                                <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
-                                <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                <a href="<?php echo base_url('admin/treatment/edit/'.$id_treatment) ?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
+                                <a data-toggle="modal" data-target="#deleteModal<?php echo $id_treatment?>" href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>
                         </tr>
+
+                        <div class="modal fade" id="deleteModal<?php echo $id_treatment?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anda ingin Hapus Data?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">Pilih "Hapus" Bila Ingin Menghapus Data.</div>
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                <a class="btn btn-primary" href="<?php echo base_url('admin/treatment/hapus/'.$id_treatment) ?>">Hapus</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <?php endforeach;?>
                       </tbody>
                     </table>

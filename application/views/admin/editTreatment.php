@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>DayClean - Tambah Treatment</title>
+  <title>DayClean - Admin</title>
 
 <?php $this->load->view('admin/res/lib'); ?>
 
@@ -35,7 +35,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Treatment</h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Admin</h1>
           </div>
 
           <!-- Content Row -->
@@ -43,29 +43,35 @@
             <div class="col-lg-12">
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Tambahkan Treatment dibawah ini.</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Edit Treatment</h6>
                   </div>
                   <div class="card-body">
-                    <div class="row">
+                    <div class="row justify-content-center">
                       <div class="col-lg-6">
-                      <form action="<?php  echo base_url('admin/treatment/tambahTreatment'); ?>" method="POST" enctype="multipart/form-data">
+                      <?php foreach($ubahTreatment as $row){?>
+
+                        <form action="<?php echo base_url().'admin/treatment/aksi_editTreatment'; ?>" method="POST" enctype="multipart/form-data">
+                          <div class="form-group" hidden>
+                              <label for="exampleFormControlInput1">idTreatment</label>
+                              <input type="text" name="id_treatment" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?php echo $row->id_treatment?>" required>
+                          </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Jenis Treatment</label>
-                              <input type="text" name="namatreatment" class="form-control" id="exampleFormControlInput1" placeholder="" required>
+                              <input type="text" name="nama_treatment" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?php echo $row->nama_treatment?>" required>
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Deskripsi</label>
-                              <textarea name="deskripsi" class="form-control" rows="5" required></textarea>
+                              <textarea name="deskripsi" class="form-control" rows="5" required><?php echo $row->deskripsi ?></textarea>
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Harga</label>
-                              <input type="text" name="harga" class="form-control" id="exampleFormControlInput1" placeholder="" required>
+                              <input type="text" name="harga" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?php echo $row->harga?>" required>
                           </div>
-                          <div class="row justify-content-center">
-                          <a href="<?php echo base_url('admin/treatment'); ?>" class="btn btn-danger btn-rounded mr-3 mt-2">Batal</a>
-                          <button type="submit" class="btn btn-success btn-rounded mt-2">Simpan</button>
-                          </div>
-                      </form>
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-success" value="simpan" name="save" style="margin-left: 200px;">Simpan</button>                 
+                        </div>
+                        </form>
+                        <?php } ?>
                       </div>
                     </div>
                   </div>

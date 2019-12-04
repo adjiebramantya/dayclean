@@ -63,19 +63,35 @@ class treatment extends CI_Controller {
 	function edit($id_treatment)
 		{
 			$where = array('id_treatment'=>$id_treatment);
-			$data['ganti'] = $this->m_admin->edit_treatment($where,'treatment')->result();
-			$this->load->view('admin/tambahTreatment',$data);
+			$data['ubahTreatment'] = $this->m_treatment->edit_treatment($where,'treatment')->result();
+			$this->load->view('admin/editTreatment',$data);
 		}
 
 	function aksi_editTreatment()
-	{
+	{		
+			$id_treatment = $this->input->post('id_treatment');
+			$nama_treatment = $this->input->post('nama_treatment');
+			$deskripsi = $this->input->post('deskripsi');
+			$harga = $this->input->post('harga');
 
+			$data = array(
+				'nama_treatment' => $nama_treatment,
+				'deskripsi' => $deskripsi,
+				'harga' => $harga
+			);
+
+			$where = array(
+				'id_treatment' => $id_treatment
+			);
+
+			$this->m_treatment->update_treatment($where,$data,'treatment');
+			redirect('admin/treatment');
 	}
 
 	function hapus($id_treatment)
 		{
 			$where = array('id_treatment' => $id_treatment);
-			$this->m_admin->hapus_treatment($where,'treatment');
-			redirect('treatment');
+			$this->m_treatment->hapus_treatment($where,'treatment');
+			redirect('admin/treatment');
 		}
 }
