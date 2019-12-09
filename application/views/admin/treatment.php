@@ -68,7 +68,6 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Id</th>
                           <th>Nama Treatment</th>
                           <th>Deskripsi</th>
                           <th>Harga</th>
@@ -88,10 +87,9 @@
 
                         ?>
                         <tr>
-                          <td><?php echo $id_treatment."<br>"; ?></td>
                           <td><?php echo $nama_treatment."<br>"; ?></td>
                           <td><?php echo $deskripsi."<br>"; ?></td>
-                          <td><?php echo $harga."<br>"; ?></td>
+                          <td>Rp. <?php echo number_format($harga)."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
                                 <a href="<?php echo base_url('admin/treatment/edit/'.$id_treatment) ?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
