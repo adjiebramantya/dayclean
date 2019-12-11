@@ -48,7 +48,7 @@
                   <div class="card-body">
                       <div class="col-lg-6">
                       <form>
-                          <a href="<?php echo base_url('admin/Home/detailtransaksi'); ?>" class="btn btn-success btn-rounded">Tambah Transaksi</a>
+                          <a href="<?php echo base_url('user/order/admin'); ?>" class="btn btn-success btn-rounded">Tambah Transaksi</a>
                       </form>
                       </div>
                   </div>

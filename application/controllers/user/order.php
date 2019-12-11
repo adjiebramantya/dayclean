@@ -19,4 +19,14 @@ class Order extends CI_Controller {
 
 		$this->load->view('user/order',$data);
 	}
+
+	public function admin()
+	{
+		$data = [
+			'kode'=>$this->m_order->kode(),
+			'tanggal'=>date('d-m-Y')
+		];
+
+		$this->load->view('admin/tambahTransaksi',$data);
+	}
 }
