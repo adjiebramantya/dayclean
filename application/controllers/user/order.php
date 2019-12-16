@@ -8,13 +8,15 @@ class Order extends CI_Controller {
 			parent::__construct();
 
 			$this->load->model("m_order");
+			$this->load->model("m_treatment");
 			
 		}
 	public function index()
 	{
 		$data = [
 			'kode'=>$this->m_order->kode(),
-			'tanggal'=>date('d-m-Y')
+			'tanggal'=>date('d-m-Y'),
+			'treatment'=>$this->m_treatment->list_treatment()
 		];
 
 		$this->load->view('user/order',$data);
@@ -24,7 +26,8 @@ class Order extends CI_Controller {
 	{
 		$data = [
 			'kode'=>$this->m_order->kode(),
-			'tanggal'=>date('d-m-Y')
+			'tanggal'=>date('d-m-Y'),
+			'treatment'=>$this->m_treatment->list_treatment()
 		];
 
 		$this->load->view('admin/tambahTransaksi',$data);

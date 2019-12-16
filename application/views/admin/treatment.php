@@ -92,7 +92,7 @@
                           <td>Rp. <?php echo number_format($harga)."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
-                                <a href="<?php echo base_url('admin/treatment/edit/'.$id_treatment) ?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
+                                <a href="<?php echo base_url('admin/treatment/edit/'.$id_treatment) ?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> 
                                 <a data-toggle="modal" data-target="#deleteModal<?php echo $id_treatment?>" href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>

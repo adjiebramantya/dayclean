@@ -70,8 +70,13 @@
                             <input type="text" name="no_hp" class="form-control" id="exampleFormControlInput1" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Treatment</label>
-                            <input type="text" name="treatment" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            <label for="exampleFormControlSelect1">Treatment</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="id_treatment" required>
+                              <option value="">-- Pilih Treatment --</option>
+                              <?php foreach ($treatment->result_array() as $row) { ?>
+                              <option value="<?php echo $row['id_treatment'];?>"><?php echo $row['nama_treatment'] ?> - Rp.<?php echo number_format($row['harga']) ?></option>
+                              <?php } ?>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Jumlah Sepatu</label>
@@ -81,8 +86,12 @@
                             <label for="exampleFormControlInput1">Catatan</label>
                             <textarea name="catatan" class="form-control" placeholder="Masukkan Catatan Jika anda order beberapa Treatment yang berbeda" rows="5"></textarea>
                         </div>
+                        <div class="form-group" hidden>
+                            <label for="exampleFormControlInput1">Status</label>
+                            <input type="text" name="status" class="form-control" id="exampleFormControlInput1" placeholder="" value="Belum">
+                        </div>
                         <div class="row ">
-                        <button type="button" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Simpan</button>
+                        <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Simpan</button>
                         </div>
                       </form>
                       </div>

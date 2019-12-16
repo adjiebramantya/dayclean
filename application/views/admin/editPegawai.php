@@ -43,7 +43,6 @@
             <div class="col-lg-12">
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Selamat Datang, Valeria Luna</h6>
                   </div>
                   <div class="card-body">
                     <div class="row justify-content-center">
@@ -102,13 +101,10 @@
                             <button type="submit" class="btn btn-success" value="simpan" name="save" style="margin-left: 200px;">Simpan</button>
                             
                           </div>
-
-                          </div>
-                          
                           
                         </form>
                         <?php } ?>
-                      </div>
+                        </div>
                     </div>
                   </div>
                 </div>

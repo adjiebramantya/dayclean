@@ -68,12 +68,15 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Id Admin</th>
-                          <th>Nama Admin</th>
-                          <th>Username</th>
+                          <th>Invoice</th>
+                          <th>Nama User</th>
                           <th>No. Telepon</th>
                           <th>Alamat</th>
-                          <th>Level</th>
+                          <th>Nama Treatment</th>
+                          <th>Jumlah</th>
+                          <th>Catatan</th>
+                          <th>Status</th>
+                          <th>Total</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -85,9 +88,13 @@
                           <td>087776767550</td>
                           <td>jl.lingsirwengi no.99</td>
                           <td>Kasir</td>
+                          <td>Kasir</td>
+                          <td>Kasir</td>
+                          <td>Kasir</td>
                           <td>
                               <div class="row justify-content-center">
-                                <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
+                                <a href="#" class="btn btn-info btn-circle"><i class="far fa-edit"></i></a>
+                                <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a>
                                 <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>
