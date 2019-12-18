@@ -5,30 +5,60 @@
 	class m_order extends CI_Model
 	{
 		//data_treatment:
-		function list_pegawai()
+		function list_order()
 		{
-			$hasil=$this->db->query("SELECT id_pegawai,nm_pegawai,alamat_pegawai,no_hp,level FROM pegawai");
+			$hasil=$this->db->query("SELECT id_order,nm_order,alamat_order,no_hp,level FROM order");
 
             return $hasil;
 		}
 
-		function edit_pegawai($where,$table)
+		function edit_order($where,$table)
 		{
 			return $this->db->get_where($table,$where);
 		}
 
-		function update_pegawai($where,$data,$table)
+		function tampil_sepatu($invoice)
+
+		{
+			return $this ->db -> query("SELECT * FROM detail_order where invoice='$invoice'");
+		}
+
+		function harga_treatment($treatment)
+
+		{
+			$hasil = $this->db->query("SELECT harga FROM treatment where nama_treatment='$treatment'");
+
+			return $hasil->row();
+		}
+
+		function id_treatment($treatment)
+
+		{
+			$hasil = $this->db->query("SELECT id_treatment FROM treatment where nama_treatment='$treatment'");
+
+			return $hasil->row();
+		}
+
+		function jumlah_semua_sepatu()
+
+		{
+			$hasil = $this->db->query("SELECT sum(jumlah_sepatu) as jumlah FROM detail_order");
+
+			return $hasil->row();
+		}
+
+		function update_order($where,$data,$table)
 		{
 			$this->db->where($where);
 			$this->db->update($table,$data);
 		}
 
-		function input_pegawai($data,$table)
+		function input_order($data,$table)
 		{
 			$this->db->insert($table,$data);
 		}
 
-		function hapus_pegawai($where,$table){
+		function hapus_order($where,$table){
 			$this->db->where($where);
 			$this->db->delete($table);
 		}
@@ -53,6 +83,20 @@
 			$batas=str_pad($kode,4,"0",STR_PAD_LEFT);
 			$kodetampil="TR".$tgl.$batas; //format kode
 			return $kodetampil;	
+		}
+		function get_sum($invoice)
+		{
+			$this->db->select_sum('total','total_semua');
+			$this->db->from('detail_order');
+			$this->db->where('invoice' , $invoice);
+			return $this->db->get('')->row();
+		}
+		function get_sum1($invoice)
+		{
+			$this->db->select_sum('jumlah_sepatu','total_sepatu');
+			$this->db->from('detail_order');
+			$this->db->where('invoice' , $invoice);
+			return $this->db->get('')->row();
 		}
 	}
 ?>

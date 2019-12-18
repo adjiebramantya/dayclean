@@ -104,7 +104,7 @@
                   <h1 class="title2"> Kami Telah Mencuci </h1>
                 </div>
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2"> 123516 </h1>
+                  <h1 class="title2"><?php echo $jumlah_sepatu->jumlah?> </h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
