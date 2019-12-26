@@ -48,7 +48,7 @@
                   <div class="card-body">
                       <div class="col-lg-6">
                       <form>
-                          <a href="<?php echo base_url('user/order/admin'); ?>" class="btn btn-success btn-rounded">Tambah Transaksi</a>
+                          <a href="<?php echo base_url('user/transaksi/admin'); ?>" class="btn btn-success btn-rounded">Tambah Transaksi</a>
                       </form>
                       </div>
                   </div>
@@ -69,37 +69,55 @@
                       <thead>
                         <tr>
                           <th>Invoice</th>
+                          <th>Tanggal</th>
                           <th>Nama User</th>
                           <th>No. Telepon</th>
                           <th>Alamat</th>
-                          <th>Nama Treatment</th>
                           <th>Jumlah</th>
-                          <th>Catatan</th>
                           <th>Status</th>
                           <th>Total</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
+                       <?php 
+                        foreach ($list_transaksi->result_array() as $m):
+                              $invoice=$m['invoice'];
+ 
+                              $tanggal=$m['tanggal'];
+
+                              $nama_user=$m['nama_user'];
+
+                              $no_hp=$m['no_hp'];
+
+                              $alamat_user=$m['alamat_user'];                            
+
+                              $jumlah_sepatu=$m['jumlah_sepatu'];
+
+                              $status=$m['status'];
+
+                              $total=$m['total'];
+
+                        ?>
                         <tr>
-                          <td>1</td>
-                          <td>McGlenmor</td>
-                          <td>mckacih</td>
-                          <td>087776767550</td>
-                          <td>jl.lingsirwengi no.99</td>
-                          <td>Kasir</td>
-                          <td>Kasir</td>
-                          <td>Kasir</td>
-                          <td>Kasir</td>
+                          <td><?php echo $invoice."<br>"; ?></td>
+                          <td><?php echo $tanggal."<br>"; ?></td>
+                          <td><?php echo $nama_user."<br>"; ?></td>
+                          <td><?php echo $no_hp."<br>"; ?></td>
+                          <td><?php echo $alamat_user."<br>"; ?></td>
+                          <td><?php echo $jumlah_sepatu."<br>"; ?></td>
+                          <td><?php echo $status."<br>"; ?></td>
+                          <td><?php echo $total."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
-                                <a href="#" class="btn btn-info btn-circle"><i class="far fa-edit"></i></a>
+                                <a href="<?php echo site_url('admin/transaksi/detail_transaksi/'.$invoice)?>" class="btn btn-info btn-circle"><i class="far fa-edit">Detail</i></a>
                                 <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a>
                                 <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>
                         </tr>
                         </tr>
+                        <?php endforeach;?>
                       </tbody>
                     </table>
                   </div>

@@ -2,25 +2,31 @@
 	/**
 	 * 
 	 */
-	class m_order extends CI_Model
+	class m_transaksi extends CI_Model
 	{
 		//data_treatment:
-		function list_order()
+		function list_transaksi()
 		{
-			$hasil=$this->db->query("SELECT id_order,nm_order,alamat_order,no_hp,level FROM order");
+			$hasil=$this->db->query("SELECT * FROM transaksi");
 
             return $hasil;
 		}
 
-		function edit_order($where,$table)
+		function edit_transaksi($where,$table)
 		{
 			return $this->db->get_where($table,$where);
+		}
+
+		function transaksi($invoice)
+
+		{
+			return $this ->db -> query("SELECT * FROM transaksi where invoice='$invoice'");
 		}
 
 		function tampil_sepatu($invoice)
 
 		{
-			return $this ->db -> query("SELECT * FROM detail_order where invoice='$invoice'");
+			return $this ->db -> query("SELECT * FROM detail_transaksi where invoice='$invoice'");
 		}
 
 		function harga_treatment($treatment)
@@ -42,32 +48,32 @@
 		function jumlah_semua_sepatu()
 
 		{
-			$hasil = $this->db->query("SELECT sum(jumlah_sepatu) as jumlah FROM detail_order");
+			$hasil = $this->db->query("SELECT sum(jumlah_sepatu) as jumlah FROM detail_transaksi");
 
 			return $hasil->row();
 		}
 
-		function update_order($where,$data,$table)
+		function update_transaksi($where,$data,$table)
 		{
 			$this->db->where($where);
 			$this->db->update($table,$data);
 		}
 
-		function input_order($data,$table)
+		function input_transaksi($data,$table)
 		{
 			$this->db->insert($table,$data);
 		}
 
-		function hapus_order($where,$table){
+		function hapus_transaksi($where,$table){
 			$this->db->where($where);
 			$this->db->delete($table);
 		}
 
 		function kode(){
-			$this->db->SELECT('right(order.id_order,2) as id',false);
+			$this->db->SELECT('right(transaksi.id_transaksi,2) as id',false);
 			$this->db->order_by('id','DESC');
 			$this->db->limit(1);
-			$query=$this->db->get('order');
+			$query=$this->db->get('transaksi');
 
 			if ($query->num_rows() <> 0) {
 				//cek kode jika telah tersedia
@@ -87,14 +93,14 @@
 		function get_sum($invoice)
 		{
 			$this->db->select_sum('total','total_semua');
-			$this->db->from('detail_order');
+			$this->db->from('detail_transaksi');
 			$this->db->where('invoice' , $invoice);
 			return $this->db->get('')->row();
 		}
 		function get_sum1($invoice)
 		{
 			$this->db->select_sum('jumlah_sepatu','total_sepatu');
-			$this->db->from('detail_order');
+			$this->db->from('detail_transaksi');
 			$this->db->where('invoice' , $invoice);
 			return $this->db->get('')->row();
 		}

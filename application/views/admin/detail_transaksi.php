@@ -47,9 +47,12 @@
                   </div>
                   <div class="card-body">
                       <div class="col-lg-6">
-                      <form>
-                          <a href="#" class="btn btn-success btn-rounded">Tambah</a>
-                      </form>
+                      <b>Invoice :</b>
+                      <p><?php echo $data_transaksi->invoice?></p>
+                      <b>Nama User :</b>
+                      <p><?php echo $data_transaksi->nama_user?></p>
+                      <b>Status :</b>
+                      <p><?php echo $data_transaksi->status?></p>
                       </div>
                   </div>
                 </div>
@@ -57,40 +60,23 @@
             <div class="col-lg-4">
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Treatment</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Tambah Treatment</h6>
                   </div>
                   <div class="card-body">
                       <div class="col-lg-12">
-                      <form>
+                      <form action="<?php echo site_url('admin/transaksi/tambah_treatment/'.$invoice);?>" method="post">
                           <div class="form-group">
-                              <div class="row">
-                              <div class="col-lg-8">
-                              <input type="text" name="namamenu" class="form-control" id="exampleFormControlInput1" placeholder="Menu">
-                              </div>
-                              <div class="col-lg-2">
-                              <a href="#" class="btn btn-success btn-rounded">Cari</a>
-                              </div>
-                              </div>
+                            <select class="form-control" id="exampleFormControlSelect1" name="treatment" required>
+                              <option value="">-- Pilih Treatment --</option>
+                              <?php foreach ($treatment->result_array() as $row) { ?>
+                              <option value="<?php echo $row['nama_treatment'];?>"><?php echo $row['nama_treatment'] ?> - Rp.<?php echo number_format($row['id_treatment']) ?></option>
+                              <?php } ?>
+                            </select>
                           </div>
                           <div class="form-group">
-                              <input type="text" name="qty" class="form-control" id="exampleFormControlInput1" placeholder="Jumlah">
-                              <a href="#" class="btn btn-success btn-rounded mt-3">Tambah</a>
+                              <input type="number" name="jumlah_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="Jumlah">
+                              <button class="btn btn-success btn-rounded mt-3" type="submit">Tambah</button>
                           </div>
-                      </form>
-                      </div>
-                  </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card shadow mb-4">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">TOTAL</h6>
-                  </div>
-                  <div class="card-body">
-                      <div class="col-lg-6">
-
-                      <form>
-                          <a href="#" class="btn btn-success btn-rounded">Tambah</a>
                       </form>
                       </div>
                   </div>
@@ -110,36 +96,57 @@
                       <thead>
                         <tr>
                           <th>Invoice</th>
-                          <th>Nama</th>
-                          <th>Alamat</th>
-                          <th>No.Hp</th>
-                          <th>Jenis Treatment</th>
+                          <th>Nama Treatment</th>
                           <th>Jumlah Sepatu</th>
-                          <th>Tgl. Order</th>
-                          <th>Tgl. Selesai</th>
-                          <th>Catatan</th>
+                          <th>Total</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <?php 
+                        foreach ($data_detail->result_array() as $m):
+                              $id_treatment=$m['id_treatment'];
+
+                              $invoice=$m['invoice'];
+ 
+                              $nama_treatment=$m['nama_treatment'];
+
+                              $jumlah_sepatu=$m['jumlah_sepatu'];
+
+                              $total=$m['total'];
+
+                        ?>
                         <tr>
-                          <td>0001</td>
-                          <td>Suprememan</td>
-                          <td>jl.kemaraupanjang no.212</td>
-                          <td>082128827676</td>
-                          <td>Deep clean</td>
-                          <td>2</td>
-                          <td>22-10-2019</td>
-                          <td>23-10-2019</td>
-                          <td>Tolong kembaliannya tidak disumbangkan walau hanya 100 rupiah</td>
+                          <td><?php echo $invoice."<br>"; ?></td>
+                          <td><?php echo $nama_treatment."<br>"; ?></td>
+                          <td><?php echo $jumlah_sepatu."<br>"; ?></td>
+                          <td><?php echo $total."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
-                                <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a> &nbsp &nbsp 
-                                <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                <a href="<?php echo site_url('admin/transaksi/hapus_treatment/'.$id_treatment.'/'.$invoice); ?>" class="btn btn-danger btn-circle"><i class="fas fa-info-circle">Hapus</i></a> &nbsp &nbsp 
+                                
                               </div>
                           </td>
                         </tr>
+                        <?php endforeach;?>
                       </tbody>
+                      <tfoot>
+                    <tr>
+                      <tr>
+                      <td colspan="2"><b>Total</b></td>
+                      <form action="<?php echo site_url('admin/transaksi/simpan_total/'.$invoice);?>" method="post" >
+                      <td>
+                        <input type="text" name="total_sepatu" value="<?php echo $sum_total_sepatu->total_sepatu; ?>" readonly>
+                      </td>
+                      <td>
+                        <input type="text" name="total_harga" value="<?php echo $sum_total->total_semua; ?>" readonly>
+                      </td>
+                      <td>
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                      </td>
+                      </form>
+                    </tr>
+                  </tfoot>
                     </table>
                   </div>
                 </div>

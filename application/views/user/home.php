@@ -66,7 +66,7 @@
                     <a class="page-scroll" href="#contact">Contact</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="<?php echo base_url('user/order') ?>">ORDER NOW!!</a>
+                    <a class="page-scroll" href="<?php echo base_url('user/transaksi') ?>">ORDER NOW!!</a>
                   </li>
                 </ul>
               </div>

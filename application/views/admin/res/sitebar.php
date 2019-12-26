@@ -55,7 +55,7 @@
           <span>Tabel Treatment</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('admin/Home/transaksi') ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/transaksi') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Tabel Transaksi</span></a>
       </li>

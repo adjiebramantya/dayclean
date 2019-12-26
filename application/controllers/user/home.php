@@ -22,13 +22,13 @@ class Home extends CI_Controller {
 		{
 			parent::__construct();
 
-			$this->load->model("m_order");
+			$this->load->model("m_transaksi");
 			$this->load->model("m_treatment");
 			
 		}
 
 	public function index()
-	{	$jumlah_sepatu = $this->m_order->jumlah_semua_sepatu();
+	{	$jumlah_sepatu = $this->m_transaksi->jumlah_semua_sepatu();
 
 		$data = array('jumlah_sepatu' => $jumlah_sepatu );
 

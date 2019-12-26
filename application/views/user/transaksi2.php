@@ -54,7 +54,7 @@
                     <a class="page-scroll" href="<?php echo base_url('user/home') ?>">Beranda</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="<?php echo base_url('user/order') ?>">ORDER NOW!!</a>
+                    <a class="page-scroll" href="<?php echo base_url('user/transaksi') ?>">ORDER NOW!!</a>
                   </li>
                 </ul>
               </div>
@@ -81,40 +81,74 @@
       </div>
       <div class="row">
           <div class="col-sm-6 col-md-offset-3">
-            <form action="<?php echo site_url('user/order/data_user');?>" method="post" >
+            <form action="<?php echo site_url('user/transaksi/tambah_treatment/'.$invoice.'/'.$nama);?>" method="post" >
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">INVOICE</label>
-                    <input type="text" name="id_order" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?= $kode ?>" disabled>
+                    <label for="exampleFormControlSelect1">Treatment</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="treatment" required>
+                      <option value="">-- Pilih Treatment --</option>
+                      <?php foreach ($treatment->result_array() as $row) { ?>
+                      <option value="<?php echo $row['nama_treatment'];?>"><?php echo $row['nama_treatment'] ?> - Rp.<?php echo number_format($row['harga']) ?></option>
+                      <?php } ?>
+                    </select>
                 </div>
-                <div class="form-group" hidden>
-                    <label for="exampleFormControlInput1">Tanggal Order</label>
-                    <input type="text" name="tanggal" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?= $tanggal ?>" required>
-                </div>
+
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Nama customer</label>
-                    <input type="text" name="nama_user" class="form-control" id="exampleFormControlInput1" placeholder="" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Alamat</label>
-                    <input type="text" name="alamat_user" class="form-control" id="exampleFormControlInput1" placeholder="" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Nomer Telepon</label>
-                    <input type="number" name="no_hp" class="form-control" id="exampleFormControlInput1" placeholder="" required>
-                </div>
-                <div class="form-group" hidden>
-                    <label for="exampleFormControlInput1">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleFormControlInput1" placeholder="" value="Belum">
+                    <label for="exampleFormControlInput1">Jumlah Sepatu</label>
+                    <input type="text" name="jumlah_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                 </div>
                 <div class="row ">
                 <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Simpan</button>
+                </div>
+                </form>
+                <div class="row">
+                  <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th>Tretment</th>
+                      <th>Jumlah Sepatu</th>
+                      <th>Total</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($detail_sepatu->result_array() as $row){ $id_treatment=$row['id_treatment']
+                      ?>
+                    <tr> 
+                      <td><?php echo $row['id_treatment']?></td>
+                      <td><?php echo $row['nama_treatment'] ?></td>
+                      <td><?php echo $row['jumlah_sepatu'] ?> </td>
+                      <td>Rp.<?php echo number_format($row['total']) ?> </td>
+                      <td>
+                          <a href="<?php echo site_url('user/transaksi/hapus_treatment/'.$id_treatment.'/'.$invoice.'/'.$nama); ?>" class="btn btn-danger">Hapus</a>
+                      </td>
+                    </tr>
+                  <?php }?> 
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td><b>Total</b></td>
+                      <?php $invoice = $this->session->userdata('invoice')?>
+                      <form action="<?php echo site_url('user/transaksi/simpan_total/'.$invoice);?>" method="post" >
+                      <td>
+                        <input type="text" name="total_sepatu" value="<?php echo $sum_total_sepatu->total_sepatu; ?>" readonly>
+                      </td>
+                      <td>
+                        <input type="text" name="total_harga" value="<?php echo $sum_total->total_semua; ?>" readonly>
+                      </td>
+                      <td>
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                      </td>
+                      </form>
+                    </tr>
+                  </tfoot>
+                </table>
                 </div>
 
                 <!-- button:hover {
   background-color: #fff;
   border: 1px solid #333;
   color: #333;-->
-            </form>
+            
           </div>
         </div>
     </div>
