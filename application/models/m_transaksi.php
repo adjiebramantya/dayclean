@@ -104,5 +104,15 @@
 			$this->db->where('invoice' , $invoice);
 			return $this->db->get('')->row();
 		}
+
+		function edit_status($where,$table)
+		{
+			return $this->db->get_where($table,$where);
+		}
+		function update_status($where,$data,$table)
+		{
+			$this->db->where($where);
+			$this->db->update($table,$data);
+		}
 	}
 ?>

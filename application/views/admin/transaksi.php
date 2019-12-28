@@ -111,7 +111,7 @@
                           <td>
                               <div class="row justify-content-center">
                                 <a href="<?php echo site_url('admin/transaksi/detail_transaksi/'.$invoice)?>" class="btn btn-info btn-circle"><i class="far fa-edit">Detail</i></a>
-                                <a href="#" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a>
+                                <a href="<?php echo site_url('admin/transaksi/editstatus/'.$invoice)?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a>
                                 <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>
