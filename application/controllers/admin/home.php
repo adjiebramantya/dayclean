@@ -3,9 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
-	function __construct()
+	public function __construct()
 		{
 			parent::__construct();
+
+			if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin/clogin"));
+
+		}
 
 		}
 	public function index()
