@@ -29,7 +29,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('admin/pegawai/tambahPegawai') ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/pegawai/editPegawai'); ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Data Admin</span></a>
       </li>
