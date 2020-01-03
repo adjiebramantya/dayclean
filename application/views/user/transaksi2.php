@@ -127,7 +127,6 @@
                   <tfoot>
                     <tr>
                       <td><b>Total</b></td>
-                      <?php $invoice = $this->session->userdata('invoice')?>
                       <form action="<?php echo site_url('user/transaksi/simpan_total/'.$invoice);?>" method="post" >
                       <td>
                         <input type="text" name="total_sepatu" value="<?php echo $sum_total_sepatu->total_sepatu; ?>" readonly>
