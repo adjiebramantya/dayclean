@@ -129,5 +129,10 @@
 			$this->db->where('tanggal' , $tanggal);
 			return $this->db->get('')->row();
 		}
+
+		function cek_invoice($invoice){
+
+			return $this ->db -> query("SELECT invoice FROM transaksi where invoice='$invoice'")->num_rows();	
+		}
 	}
 ?>

@@ -98,8 +98,17 @@ class transaksi extends CI_Controller {
 	public function cek_invoice(){
 				$invoice = $this->input->post('invoice');
 
-				$data['invoice']=$this->m_transaksi->transaksi($invoice)->row();
+				$cek = $this->m_transaksi->cek_invoice($invoice);
 
-				$this->load->view('user/invoice',$data);
+				if ($cek>0) {
+					$data['invoice']=$this->m_transaksi->transaksi($invoice)->row();
+
+					$this->load->view('user/invoice',$data);
+				} else {
+					redirect('user/home');
+					echo '<script language="javascript">';
+					echo 'alert("message successfully sent")';
+					echo '</script>';
+				}
 			}
 }
