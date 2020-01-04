@@ -105,10 +105,9 @@ class transaksi extends CI_Controller {
 
 					$this->load->view('user/invoice',$data);
 				} else {
-					redirect('user/home');
-					echo '<script language="javascript">';
-					echo 'alert("message successfully sent")';
-					echo '</script>';
+					//redirect('user/home');
+					echo '<script language="javascript">alert("Invoice yang diinputkan Tidak Ditemukan");</script>';
+					echo '<script>window.location.href=document.referrer;</script>';
 				}
 			}
 }
