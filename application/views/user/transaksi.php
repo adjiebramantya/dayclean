@@ -82,10 +82,6 @@
       <div class="row">
           <div class="col-sm-6 col-md-offset-3">
             <form action="<?php echo site_url('user/transaksi/data_user/'.$invoice);?>" method="post" >
-                <div class="form-group" hidden>
-                    <label for="exampleFormControlInput1">Tanggal transaksi</label>
-                    <input type="text" name="tanggal" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?= $tanggal ?>" required>
-                </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nama customer</label>
                     <input type="text" name="nama_user" class="form-control" id="exampleFormControlInput1" placeholder="" required>
