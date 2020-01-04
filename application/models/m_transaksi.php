@@ -114,5 +114,20 @@
 			$this->db->where($where);
 			$this->db->update($table,$data);
 		}
+
+		function laporan_harian(){
+			$tanggal=date('dmY');
+
+			return $this ->db -> query("SELECT * FROM transaksi where tanggal='$tanggal'");			
+		}
+
+		function laporan_harian_sum(){
+			$tanggal=date('dmY');
+
+			$this->db->select_sum('total','total_semua');
+			$this->db->from('transaksi');
+			$this->db->where('tanggal' , $tanggal);
+			return $this->db->get('')->row();
+		}
 	}
 ?>

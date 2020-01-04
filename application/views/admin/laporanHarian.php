@@ -51,13 +51,11 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Id laporan</th>
+                          <th>Invoice</th>
                           <th>Tgl. Order</th>
-                          <th>Tgl. Selesai</th>
                           <th>Nama</th>
                           <th>Alamat</th>
                           <th>No.Hp</th>
-                          <th>Jenis Treatment</th>
                           <th>Jumlah</th>
                           <th>Total</th>
                         </tr>
@@ -66,11 +64,9 @@
                         <tr>
                           <td>1</td>
                           <td>22-10-2019</td>
-                          <td>23-10-2019</td>
                           <td>Adi</td>
                           <td>jl.kenangan</td>
                           <td>089766707878</td>
-                          <td>Deep Clean</td>
                           <td>2</td>
                           <td>40.000</td>
                         </tr>
