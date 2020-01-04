@@ -104,7 +104,7 @@
                   <h1 class="title2"> Kami Telah Mencuci </h1>
                 </div>
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2"><?php echo $jumlah_sepatu->jumlah?> </h1>
+                  <h1 class="title2"><?= $jumlah_sepatu->jumlah ?></h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -144,6 +144,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="col-sm-6 col-md-offset-3">
+            <form action="<?php echo site_url('admin/transaksi/cek_invoice'); ?>" method="post" >
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Cek Invoice</label>
+                    <input type="text" name="invoice" class="form-control" id="exampleFormControlInput1" required>
+                </div>
+                <div>
+                <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Simpan</button>
+                </div>
+            </form>
+          </div>
+
           <div class="section-headline text-center">
             <h2>Tentang DayClean</h2>
           </div>

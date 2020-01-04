@@ -87,4 +87,12 @@ class transaksi extends CI_Controller {
 				$this->m_transaksi->update_status($where,$data,'transaksi');
 				redirect('admin/transaksi');
 			}
+
+	public function cek_invoice(){
+				$invoice = $this->input->post('invoice');
+
+				$data['invoice']=$this->m_transaksi->transaksi($invoice);
+
+				$this->load->view('user/invoice',$data);
+			}
 }
