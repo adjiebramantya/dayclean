@@ -145,7 +145,7 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="col-sm-6 col-md-offset-3">
-            <form action="<?php echo site_url('admin/transaksi/cek_invoice'); ?>" method="post" >
+            <form action="<?php echo site_url('user/transaksi/cek_invoice'); ?>" method="post" >
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Cek Invoice</label>
                     <input type="text" name="invoice" class="form-control" id="exampleFormControlInput1" required>

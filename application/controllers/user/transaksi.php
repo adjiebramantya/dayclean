@@ -95,4 +95,11 @@ class transaksi extends CI_Controller {
 				redirect('https://api.whatsapp.com/send?phone=62823-4060-1537&text=Halo%20admin%20Kepstore%20saya%20mau%20nanya%20kaos'.$invoice);
 				
 			}
+	public function cek_invoice(){
+				$invoice = $this->input->post('invoice');
+
+				$data['invoice']=$this->m_transaksi->transaksi($invoice)->row();
+
+				$this->load->view('user/invoice',$data);
+			}
 }
