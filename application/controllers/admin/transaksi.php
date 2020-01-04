@@ -91,7 +91,7 @@ class transaksi extends CI_Controller {
 	public function cek_invoice(){
 				$invoice = $this->input->post('invoice');
 
-				$data['invoice']=$this->m_transaksi->transaksi($invoice);
+				$data['invoice']=$this->m_transaksi->transaksi($invoice)->row();
 
 				$this->load->view('user/invoice',$data);
 			}
