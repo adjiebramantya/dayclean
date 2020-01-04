@@ -88,13 +88,6 @@ class transaksi extends CI_Controller {
 				redirect('admin/transaksi');
 			}
 
-	public function cek_invoice(){
-				$invoice = $this->input->post('invoice');
-
-				$data['invoice']=$this->m_transaksi->transaksi($invoice)->row();
-
-				$this->load->view('user/invoice',$data);
-			}
 
 	public function laporan_harian(){
 				$data = array(
