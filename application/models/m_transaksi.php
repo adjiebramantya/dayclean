@@ -115,20 +115,36 @@
 			$this->db->update($table,$data);
 		}
 
-		function laporan_harian(){
-			$tanggal=date('dmY');
+		function laporan_harian($tanggal){
 
-			return $this ->db -> query("SELECT * FROM transaksi where tanggal='$tanggal'");			
+			return $this ->db -> query("SELECT * FROM transaksi where tanggal='$tanggal' && status='selesai'");
 		}
 
-		function laporan_harian_sum(){
-			$tanggal=date('dmY');
+		function laporan_harian_sum($tanggal){
+			
 
 			$this->db->select_sum('total','total_semua');
 			$this->db->from('transaksi');
 			$this->db->where('tanggal' , $tanggal);
+			$this->db->where('status' , 'selesai');
 			return $this->db->get('')->row();
 		}
+
+		function laporan_bulanan($bulan){
+
+			return $this ->db -> query("SELECT * FROM transaksi WHERE status='Selesai' && month(transaksi.tanggal) = $bulan");
+		}
+
+		function laporan_bulanan_sum($bulan){
+			
+
+			$this->db->select_sum('total','total_semua');
+			$this->db->from('transaksi');
+			$this->db->where('month(transaksi.tanggal)' , $bulan);
+			$this->db->where('status' , 'selesai');
+			return $this->db->get('')->row();
+		}
+	
 
 		function cek_invoice($invoice){
 

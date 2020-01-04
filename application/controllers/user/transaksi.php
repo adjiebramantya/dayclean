@@ -15,7 +15,6 @@ class transaksi extends CI_Controller {
 	{
 		$data = [
 			'invoice'=>$this->m_transaksi->kode(),
-			'tanggal'=>date('d-m-Y'),
 			'treatment'=>$this->m_treatment->list_treatment()
 		];
 

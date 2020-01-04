@@ -68,12 +68,12 @@
         LAPORAN
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('admin/Home/laporanHarian') ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/laporan') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan Harian</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?php echo base_url('admin/laporan/bulanan') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan Bulanan</span></a>
       </li>

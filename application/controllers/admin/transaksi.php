@@ -87,14 +87,4 @@ class transaksi extends CI_Controller {
 				$this->m_transaksi->update_status($where,$data,'transaksi');
 				redirect('admin/transaksi');
 			}
-
-
-	public function laporan_harian(){
-				$data = array(
-					'laporan_harian'=>$this->m_transaksi->laporan_harian(),
-					'laporan_harian_sum'=>$this->m_transaksi->laporan_harian_sum()
-				);
-
-				$this->load->view('admin/laporanHarian',$data);
-			}
 }

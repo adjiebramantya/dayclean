@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>DayClean - Transaksi</title>
+  <title>DayClean - Laporan Harian</title>
 
 <?php $this->load->view('admin/res/lib'); ?>
 
@@ -35,53 +35,66 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Data Transaksi</h1>
+            <h1 class="h3 mb-0 text-gray-800">Laporan Harian Admin</h1>
           </div>
 
-
-          <div class="row">
-            <div class="col-lg-12">
-                <div class="card shadow mb-4">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Mengelolah Data Transaksi</h6>
-                  </div>
-                  <div class="card-body">
-                      <div class="col-lg-6">
-                      <form>
-                          <a href="<?php echo base_url('user/transaksi/admin'); ?>" class="btn btn-success btn-rounded">Tambah Transaksi</a>
-                      </form>
-                      </div>
-                  </div>
-                </div>
-            </div>
-          </div>
           <!-- Content Row -->
           <div class="row ">
             <div class="col-lg-12">
               <!-- DataTales Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tabel Transaksi</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Laporan Harian</h6>
+                  
                 </div>
+
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <span>Tanggal Order</span>
+                      <div class="row">
+                      <div class="col-sm-3">
+                      <form action="<?php echo site_url('admin/laporan/bulanan')?>" method="post">
+                      <div class="form-group">
+                        
+                      <select class="form-control col-sm-12" id="exampleFormControlSelect1" name="bulan" required>
+                          <option value="">-- Pilih Bulan --</option>
+                          <option value="1">Januari</option>
+                          <option value="2">Februari</option>
+                          <option value="3">Maret</option>
+                          <option value="4">April</option>
+                          <option value="5">Mei</option>
+                          <option value="6">Juni</option>
+                          <option value="7">Juli</option>
+                          <option value="8">Agustus</option>
+                          <option value="9">Semptember</option>
+                          <option value="10">Oktober</option>
+                          <option value="11">November</option>
+                          <option value="12">Desember</option>
+                          
+                        </select>
+                        
+                      </div>
+                      </div>
+                      <div class="col-sm-1"><button class="btn btn-success">Cari</button></div>
+                      <div class="col-sm-1"><a href="<?php echo site_url('admin/laporan/cetak_bulanan/'.$bulan); ?>" class="btn btn-primary" target="_blank">Cetak</a></div>
+                      </form>
+                      </div>
                       <thead>
                         <tr>
                           <th>Invoice</th>
-                          <th>Tanggal</th>
-                          <th>Nama User</th>
-                          <th>No. Telepon</th>
+                          <th>Tgl. Order</th>
+                          <th>Nama</th>
+                          <th>No.Hp</th>
                           <th>Alamat</th>
                           <th>Jumlah</th>
                           <th>Status</th>
                           <th>Total</th>
-                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
-                       <?php 
-                        foreach ($list_transaksi->result_array() as $m):
+                        <?php 
+                        foreach ($laporan_bulanan->result_array() as $m):
                               $invoice=$m['invoice'];
  
                               $tanggal=$m['tanggal'];
@@ -108,16 +121,13 @@
                           <td><?php echo $jumlah_sepatu."<br>"; ?></td>
                           <td><?php echo $status."<br>"; ?></td>
                           <td><?php echo $total."<br>"; ?></td>
-                          <td>
-                              <div class="row justify-content-center">
-                                <a href="<?php echo site_url('admin/transaksi/detail_transaksi/'.$invoice)?>" class="btn btn-info btn-circle"><i class="far fa-edit">Detail</i></a>
-                                <a href="<?php echo site_url('admin/transaksi/editstatus/'.$invoice)?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle">Status</i></a>
-                                <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                              </div>
-                          </td>
-                        </tr>
                         </tr>
                         <?php endforeach;?>
+                        <tr>
+                          <th colspan="7" >Total</th>
+                          <td><?php echo $laporan_bulanan_sum->total_semua?></td>
+                        </tr>
+                        
                       </tbody>
                     </table>
                   </div>
