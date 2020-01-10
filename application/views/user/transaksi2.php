@@ -42,7 +42,7 @@
 									</button>
                 <!-- Brand -->
                 <a class="navbar-brand page-scroll sticky-logo" href="<?php echo base_url('user/home') ?>">
-                  <h1><span>Dayclean</span> Jember</h1>
+                  <h1><span>Day</span>Clean</h1>
                   <!-- Uncomment below if you prefer to use an image logo -->
                   <!-- <img src="img/logo.png" alt="" title=""> -->
 								</a>
