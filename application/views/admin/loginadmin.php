@@ -37,7 +37,7 @@
 						Login Admin
 					</span>
 					<span class="login100-form-avatar">
-						<img src="<?php echo base_url('admin/login/images/adminlogin.png')?>" alt="ADMINPNG">
+						<img src="<?php echo base_url('login/images/adminlogin.png')?>" alt="ADMINPNG">
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
