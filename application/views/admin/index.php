@@ -41,6 +41,7 @@
           <ul class="navbar-nav ml-auto">
 
             <div class="topbar-divider d-none d-sm-block"></div>
+            <img src="<?php echo base_url('login/images/adminicon.png')?>" width="60px" height="60px" alt="ADMINICON">
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -138,7 +139,7 @@
         <div class="modal-body">Pilih "Logout" Jika ingin keluar.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="<?php echo base_url('admin/clogin/logout'); ?>">Logout</a>
         </div>
       </div>
     </div>

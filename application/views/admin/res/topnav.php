@@ -11,6 +11,7 @@
           <ul class="navbar-nav ml-auto">
 
             <div class="topbar-divider d-none d-sm-block"></div>
+            <img src="<?php echo base_url('login/images/adminicon.png')?>" width="60px" height="60px" alt="ADMINICON">
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">

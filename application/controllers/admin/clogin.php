@@ -17,7 +17,7 @@ class clogin extends CI_Controller{
 		$password = $this->input->post('password');
 		$where = array(
 			'username' => $username,
-			'password' => $password
+			'password' => md5($password)
 			);
 		$cek = $this->mlogin->cek_login("pegawai",$where)->num_rows();
 		if($cek > 0){

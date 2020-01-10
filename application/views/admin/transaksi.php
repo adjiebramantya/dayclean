@@ -110,8 +110,8 @@
                           <td><?php echo $total."<br>"; ?></td>
                           <td>
                               <div class="row justify-content-center">
-                                <a href="<?php echo site_url('admin/transaksi/detail_transaksi/'.$invoice)?>" class="btn btn-info btn-circle"><i class="far fa-edit">Detail</i></a>
-                                <a href="<?php echo site_url('admin/transaksi/editstatus/'.$invoice)?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle">Status</i></a>
+                                <a href="<?php echo site_url('admin/transaksi/detail_transaksi/'.$invoice)?>" class="btn btn-info btn-circle"><i class="far fa-edit"></i></a>
+                                <a href="<?php echo site_url('admin/transaksi/editstatus/'.$invoice)?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a>
                                 <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>
@@ -157,7 +157,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="<?php echo base_url('admin/clogin/logout'); ?>">Logout</a>
         </div>
       </div>
     </div>

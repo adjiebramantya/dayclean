@@ -36,7 +36,7 @@ class pegawai extends CI_Controller {
 				'no_hp' => $no_hp,
 				'level' => $level,
 				'username' => $username,
-				'password' => $password
+				'password' => md5($password)
 			);
 			$this->m_pegawai->input_pegawai($data,'pegawai');
 			redirect('admin/pegawai');
@@ -65,7 +65,7 @@ class pegawai extends CI_Controller {
 				'no_hp' => $no_hp,
 				'level' => $level,
 				'username' => $username,
-				'password' => $password
+				'password' => md5($password)
 			);
 
 			$where = array(
