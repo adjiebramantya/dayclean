@@ -32,7 +32,10 @@ class clogin extends CI_Controller{
 			redirect(base_url("admin/Home"));
  
 		}else{
-			echo "Username dan password salah !";
+			echo "<script type='text/javascript'>
+        			alert('Username & Password Anda Salah!');
+        			history.back(self);
+        		</script>";
 		}
 	}
  
