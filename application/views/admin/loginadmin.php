@@ -34,7 +34,7 @@
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<form action="<?php echo base_url('admin/clogin/aksi_login'); ?>" class="login100-form validate-form" method="POST">
 					<span class="login100-form-title p-b-70">
-						Login Admin
+						Login Admin Dayclean Jember
 					</span>
 					<span class="login100-form-avatar">
 						<img src="<?php echo base_url('login/images/adminlogin.png')?>" alt="ADMINPNG">

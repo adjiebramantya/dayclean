@@ -3,9 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class transaksi extends CI_Controller {
 
-	function __construct()
+	public function __construct()
 		{
 			parent::__construct();
+
+			if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin/clogin"));}
 
 			$this->load->model("m_transaksi");
 			$this->load->model("m_treatment");
