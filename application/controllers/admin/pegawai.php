@@ -58,7 +58,7 @@ class pegawai extends CI_Controller {
 			$id_pegawai = $this->input->post('id_pegawai');
 			$nm_pegawai = $this->input->post('nm_pegawai');
 			$alamat_pegawai = $this->input->post('alamat_pegawai');
-			$no_hp = $this->input->post('no_hp');
+			$no_hp = $this->input->post('no_hp');      
 			$level = $this->input->post('level');
 			$username = $this->input->post('username');
 			
@@ -76,7 +76,7 @@ class pegawai extends CI_Controller {
 			);
 
 			$this->m_pegawai->update_pegawai($where,$data,'pegawai');
-			redirect('admin/pegawai');
+			redirect('admin/home');
 		}
 
 		function hapusPegawai($id_pegawai)
@@ -100,7 +100,7 @@ class pegawai extends CI_Controller {
 			
 
 			$data = array(
-				'password' => $password
+				'password' => md5($password)
 			);
 
 			$where = array(
@@ -108,6 +108,6 @@ class pegawai extends CI_Controller {
 			);
 
 			$this->m_pegawai->update_pegawai($where,$data,'pegawai');
-			redirect('admin/pegawai');
+			redirect('admin/pegawai/editPegawai/'.$id_pegawai);
 		}
 }

@@ -76,6 +76,7 @@
                           <?php
                             if($this->session->userdata("level") == "superadmin"){
                           ?>
+                          
                           <div class="form-group row">
                             <label for="edit5" class="col-sm-2 col-form-label">level</label>
                                   <select id="inputState" class="form-control" name="level" value="<?php echo $row->level; ?>">
@@ -85,7 +86,16 @@
                                   </select>
                           </div>
                           <?php
-                            }
+                            }else{?>
+                              <div class="form-group row">
+                                <label for="edit5" class="col-sm-2 col-form-label">level</label>
+                                      <select id="inputState" class="form-control" name="level" value="<?php echo $row->level; ?>">
+                                          <option selected>Pilih Level</option>
+                                          <option>pegawai</option>
+                                      </select>
+                              </div>
+
+                            <?php }
                           ?>
                           <div class="form-group row">
                             <label for="edit6" class="col-sm-2 col-form-label">Username</label>
