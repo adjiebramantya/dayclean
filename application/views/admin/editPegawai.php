@@ -77,8 +77,8 @@
                             <label for="edit5" class="col-sm-2 col-form-label">level</label>
                                   <select id="inputState" class="form-control" name="level" value="<?php echo $row->level; ?>">
                                       <option selected>Pilih Level</option>
-                                      <option>Pegawai 1</option>
-                                      <option>Pegawai 2</option>
+                                      <option>superadmin</option>
+                                      <option>pegawai</option>
                                   </select>
                           </div>
                           <div class="form-group row">

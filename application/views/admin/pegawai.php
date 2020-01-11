@@ -64,8 +64,8 @@
                               <label for="inputLevel">Level</label>
                                   <select id="inputState" class="form-control" name="level">
                                       <option selected>Pilih Level</option>
-                                      <option>Pegawai 1</option>
-                                      <option>Pegawai 2</option>
+                                      <option>superadmin</option>
+                                      <option>pegawai</option>
                                   </select>
                           </div>
                           <div class="form-group">

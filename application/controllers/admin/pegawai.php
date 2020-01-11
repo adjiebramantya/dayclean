@@ -12,6 +12,7 @@ class pegawai extends CI_Controller {
 		}
 	public function index()
 	{
+		//if($this->session->userdata('level') != 'superadmin');
 		$data['listpegawai']=$this->m_pegawai->list_pegawai();
 		$this->load->view('admin/listPegawai',$data);
 	}
