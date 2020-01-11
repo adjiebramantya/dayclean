@@ -151,5 +151,10 @@
 
 			return $this ->db -> query("SELECT invoice FROM transaksi where invoice='$invoice'")->num_rows();	
 		}
+
+		function no_wa(){
+			return $this->db->query("SELECT no_hp FROM pegawai WHERE level='superadmin'")->row();
+		}
+
 	}
 ?>
