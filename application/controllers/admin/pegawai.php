@@ -58,15 +58,14 @@ class pegawai extends CI_Controller {
 			$no_hp = $this->input->post('no_hp');
 			$level = $this->input->post('level');
 			$username = $this->input->post('username');
-			$password = $this->input->post('password');
+			
 
 			$data = array(
 				'nm_pegawai' => $nm_pegawai,
 				'alamat_pegawai' => $alamat_pegawai,
 				'no_hp' => $no_hp,
 				'level' => $level,
-				'username' => $username,
-				'password' => md5($password)
+				'username' => $username
 			);
 
 			$where = array(
@@ -81,6 +80,31 @@ class pegawai extends CI_Controller {
 		{
 			$where = array('id_pegawai' => $id_pegawai);
 			$this->m_pegawai->hapus_pegawai($where,'pegawai');
+			redirect('admin/pegawai');
+		}
+
+		function editpass($id_pegawai)
+		{
+			$where = array('id_pegawai'=>$id_pegawai);
+			$data['ubahpass'] = $this->m_pegawai->edit_pegawai($where,'pegawai')->result();
+			$this->load->view('admin/gantipass',$data);
+		}
+
+		function updatepass()
+		{
+			$id_pegawai = $this->input->post('id_pegawai');
+			$password = $this->input->post('password');
+			
+
+			$data = array(
+				'password' => $password
+			);
+
+			$where = array(
+				'id_pegawai' => $id_pegawai
+			);
+
+			$this->m_pegawai->update_pegawai($where,$data,'pegawai');
 			redirect('admin/pegawai');
 		}
 }

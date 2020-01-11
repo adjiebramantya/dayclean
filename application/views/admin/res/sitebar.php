@@ -29,12 +29,13 @@
 
 
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('admin/pegawai/editPegawai'); ?>">
+        <?php echo $this->session->userdata("id_pegawai"); ?>
+        <a class="nav-link" href="<?php echo base_url('admin/pegawai/editPegawai/'.$this->session->userdata("id_pegawai")); ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Data Admin</span></a>
       </li>
       <?php
-          // if($this->session->userdata("level") == "superadmin"){
+           if($this->session->userdata("level") == "superadmin"){
       ?>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('admin/pegawai') ?>">
@@ -42,7 +43,7 @@
           <span>List Admin</span></a>
       </li>
       <?php
-            // }
+             }
       ?>
 
 

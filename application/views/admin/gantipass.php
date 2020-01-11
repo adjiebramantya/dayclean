@@ -47,8 +47,8 @@
                   <div class="card-body">
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
-                      <?php foreach($ubahpegawai as $row){?>
-                        <form action="<?php echo base_url().'admin/pegawai/updatePegawai'; ?>" method="POST" enctype="multipart/form-data">
+                      <?php foreach($ubahpass as $row){?>
+                        <form action="<?php echo base_url().'admin/pegawai/updatepass'; ?>" method="POST" enctype="multipart/form-data">
                           <div class="form-group row" hidden>
                             <label for="edit1" class="col-sm-2 col-form-label">ID Pegawai</label>
                               <div class="col-sm-10">
@@ -56,47 +56,18 @@
                               </div>
                           </div>
                           <div class="form-group row">
-                            <label for="edit2" class="col-sm-2 col-form-label">Nama Pegawai</label>
+                            <label for="edit7" class="col-sm-2 col-form-label">Ubah Password</label>
                               <div class="col-sm-10">
-                                <input type="text" name="nm_pegawai" class="form-control" value="<?php echo $row->nm_pegawai; ?>">
+                                <input type="password" name="password" class="form-control">
                               </div>
                           </div>
-                          <div class="form-group row">
-                            <label for="edit3" class="col-sm-2 col-form-label">Alamat Pegawai</label>
-                              <div class="col-sm-10">
-                                <input type="text" name="alamat_pegawai" class="form-control" value="<?php echo $row->alamat_pegawai; ?>">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="edit4" class="col-sm-2 col-form-label">No. HP</label>
-                              <div class="col-sm-10">
-                                <input type="number" name="no_hp" class="form-control" value="<?php echo $row->no_hp; ?>">
-                              </div>
-                          </div>
-                          <?php
-                            if($this->session->userdata("level") == "superadmin"){
-                          ?>
-                          <div class="form-group row">
-                            <label for="edit5" class="col-sm-2 col-form-label">level</label>
-                                  <select id="inputState" class="form-control" name="level" value="<?php echo $row->level; ?>">
-                                      <option selected>Pilih Level</option>
-                                      <option>superadmin</option>
-                                      <option>pegawai</option>
-                                  </select>
-                          </div>
-                          <?php
-                            }
-                          ?>
-                          <div class="form-group row">
-                            <label for="edit6" class="col-sm-2 col-form-label">Username</label>
-                              <div class="col-sm-10">
-                                <input type="text" name="username" class="form-control" value="<?php echo $row->username; ?>">
-                              </div>
+                          <div class="form-group">
+                              <input type="checkbox" onclick="myFunction()"> Show Password
                           </div>
 
-                          <div class="row justify-content-center">
-                            <a href="<?php echo base_url('admin/pegawai/editpass/'.$row->id_pegawai); ?>"  class="btn btn-primary mr-3">Ganti Password</a>
-                            <button type="submit" class="btn btn-success" value="simpan" name="save">Simpan</button>   
+                          <div class="form-group row">
+                            <button type="submit" class="btn btn-success" value="simpan" name="save" style="margin-left: 200px;">Simpan</button>
+                            
                           </div>
                           
                         </form>

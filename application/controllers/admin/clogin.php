@@ -21,9 +21,17 @@ class clogin extends CI_Controller{
 			);
 		$cek = $this->mlogin->cek_login("pegawai",$where)->num_rows();
 		if($cek > 0){
- 
+
+ 			$pegawai = $this->db->query('SELECT * FROM pegawai where username = "'.$username.'"')->row();
+
+ 			$id_pegawai = $pegawai->id_pegawai;
+
+ 			$level = $pegawai->level;
+
 			$data_session = array(
 				'nama' => $username,
+				'id_pegawai' => $id_pegawai,
+				'level' => $level,
 				'status' => "login"
 				);
  
