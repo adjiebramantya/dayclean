@@ -44,25 +44,28 @@ class laporan extends CI_Controller {
 	public function bulanan()
 	{
 		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
 		
 		if (empty($bulan)) {
 			$bulan = date('m');
+			$tahun = date('Y');
 		}
 		
 			$data = array(
 				'bulan' => $bulan,
-				'laporan_bulanan'=>$this->m_transaksi->laporan_bulanan($bulan),
-				'laporan_bulanan_sum'=>$this->m_transaksi->laporan_bulanan_sum($bulan)
+				'tahun' => $tahun,
+				'laporan_bulanan'=>$this->m_transaksi->laporan_bulanan($bulan,$tahun),
+				'laporan_bulanan_sum'=>$this->m_transaksi->laporan_bulanan_sum($bulan,$tahun)
 			);
 
 			$this->load->view('admin/laporan_bulanan',$data);
 	
 	}
-	public function cetak_bulanan($bulan)
+	public function cetak_bulanan($bulan,$tahun)
 	{
 		$data = array(
-				'laporan_bulanan'=>$this->m_transaksi->laporan_bulanan($bulan),
-				'laporan_bulanan_sum'=>$this->m_transaksi->laporan_bulanan_sum($bulan)
+				'laporan_bulanan'=>$this->m_transaksi->laporan_bulanan($bulan,$tahun),
+				'laporan_bulanan_sum'=>$this->m_transaksi->laporan_bulanan_sum($bulan,$tahun)
 				);
 		$this->load->view('admin/printlaporanbulanan',$data);
 	}

@@ -53,8 +53,8 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <span>Tanggal Order</span>
                       <div class="row">
-                      <div class="col-sm-3">
                       <form action="<?php echo site_url('admin/laporan/bulanan')?>" method="post">
+                      <div class="col-sm-3">
                       <div class="form-group">
                         
                       <select class="form-control col-sm-12" id="exampleFormControlSelect1" name="bulan" required>
@@ -76,8 +76,25 @@
                         
                       </div>
                       </div>
+                      <div class="col-sm-3">
+                      <div class="form-group">
+                        
+                      <select class="form-control col-sm-12" id="exampleFormControlSelect1" name="tahun" required>
+                          <option value="">-- Pilih Tahun --</option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                          <option value="2023">2023</option>
+                          <option value="2024">2024</option>
+                          <option value="2025">2025</option>
+                          
+                        </select>
+                        
+                      </div>
+                      </div>
                       <div class="col-sm-1"><button class="btn btn-success">Cari</button></div>
-                      <div class="col-sm-1"><a href="<?php echo site_url('admin/laporan/cetak_bulanan/'.$bulan); ?>" class="btn btn-primary" target="_blank">Cetak</a></div>
+                      <div class="col-sm-1"><a href="<?php echo site_url('admin/laporan/cetak_bulanan/'.$bulan.'/'.$tahun); ?>" class="btn btn-primary" target="_blank">Cetak</a></div>
                       </form>
                       </div>
                       <thead>

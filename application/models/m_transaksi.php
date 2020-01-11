@@ -130,17 +130,18 @@
 			return $this->db->get('')->row();
 		}
 
-		function laporan_bulanan($bulan){
+		function laporan_bulanan($bulan,$tahun){
 
-			return $this ->db -> query("SELECT * FROM transaksi WHERE status='Selesai' && month(transaksi.tanggal) = $bulan");
+			return $this ->db -> query("SELECT * FROM transaksi WHERE status='Selesai' && month(transaksi.tanggal) = $bulan && year(transaksi.tanggal) = $tahun");
 		}
 
-		function laporan_bulanan_sum($bulan){
+		function laporan_bulanan_sum($bulan,$tahun){
 			
 
 			$this->db->select_sum('total','total_semua');
 			$this->db->from('transaksi');
 			$this->db->where('month(transaksi.tanggal)' , $bulan);
+			$this->db->where('year(transaksi.tanggal)' , $tahun);
 			$this->db->where('status' , 'selesai');
 			return $this->db->get('')->row();
 		}
