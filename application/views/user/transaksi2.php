@@ -97,14 +97,14 @@
                     <input type="text" name="jumlah_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                 </div>
                 <div class="row ">
-                <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Simpan</button>
+                <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mb-2 mr-2">Tambah Sepatu</button>
                 </div>
                 </form>
-                <div class="row">
+                <div class="row table-responsive">
                   <table class="table table-borderless">
                   <thead>
                     <tr>
-                      <th>Tretment</th>
+                      <th>Nama Tretment</th>
                       <th>Jumlah Sepatu</th>
                       <th>Total</th>
                       <th>Action</th>
@@ -114,7 +114,6 @@
                     <?php foreach($detail_sepatu->result_array() as $row){ $id_treatment=$row['id_treatment']
                       ?>
                     <tr> 
-                      <td><?php echo $row['id_treatment']?></td>
                       <td><?php echo $row['nama_treatment'] ?></td>
                       <td><?php echo $row['jumlah_sepatu'] ?> </td>
                       <td>Rp.<?php echo number_format($row['total']) ?> </td>
@@ -124,24 +123,34 @@
                     </tr>
                   <?php }?> 
                   </tbody>
-                  <tfoot>
-                    <tr>
-                      <td><b>Total</b></td>
-                      <form action="<?php echo site_url('user/transaksi/simpan_total/'.$invoice);?>" method="post" >
-                      <td>
-                        <input type="text" name="total_sepatu" value="<?php echo $sum_total_sepatu->total_sepatu; ?>" readonly>
-                      </td>
-                      <td>
-                        <input type="text" name="total_harga" value="<?php echo $sum_total->total_semua; ?>" readonly>
-                      </td>
-                      <td>
-                        <button type="submit" class="btn btn-success">Simpan</button>
-                      </td>
-                      </form>
-                    </tr>
-                  </tfoot>
+                  
                 </table>
                 </div>
+
+                <div class="row">
+                  <h3>Rincian Biaya</h3>
+                </div>
+                <form action="<?php echo site_url('user/transaksi/simpan_total/'.$invoice);?>" method="post" >
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Total Sepatu</label>
+                        <input type="text" name="total_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?php echo $sum_total_sepatu->total_sepatu; ?>" readonly>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Total Harga</label>
+                        <input type="text" name="total_harga" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?php echo $sum_total->total_semua; ?>" readonly>
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="form-group">
+                        <button type="submit" style="float: right;" class="btn btn-success">Selesai dan Lanjut WA</button>
+                    </div>
+                  </div>
+                </div>
+                </form>
 
                 <!-- button:hover {
   background-color: #fff;
