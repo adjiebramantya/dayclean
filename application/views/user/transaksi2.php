@@ -97,14 +97,14 @@
                     <input type="text" name="jumlah_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                 </div>
                 <div class="row ">
-                <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Simpan</button>
+                <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mt-2 mr-2">Tambah Sepatu</button>
                 </div>
                 </form>
-                <div class="row">
+                <div class="row table-responsive">
                   <table class="table table-borderless">
                   <thead>
                     <tr>
-                      <th>Tretment</th>
+                      <th>Nama Tretment</th>
                       <th>Jumlah Sepatu</th>
                       <th>Total</th>
                       <th>Action</th>
@@ -114,7 +114,6 @@
                     <?php foreach($detail_sepatu->result_array() as $row){ $id_treatment=$row['id_treatment']
                       ?>
                     <tr> 
-                      <td><?php echo $row['id_treatment']?></td>
                       <td><?php echo $row['nama_treatment'] ?></td>
                       <td><?php echo $row['jumlah_sepatu'] ?> </td>
                       <td>Rp.<?php echo number_format($row['total']) ?> </td>
@@ -135,7 +134,7 @@
                         <input type="text" name="total_harga" value="<?php echo $sum_total->total_semua; ?>" readonly>
                       </td>
                       <td>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-success">Selesai dan Lanjut WA</button>
                       </td>
                       </form>
                     </tr>
