@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Jan 2020 pada 12.41
+-- Waktu pembuatan: 12 Jan 2020 pada 16.58
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -37,13 +37,6 @@ CREATE TABLE `detail_transaksi` (
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `detail_transaksi`
---
-
-INSERT INTO `detail_transaksi` (`id_detail`, `invoice`, `id_treatment`, `nama_treatment`, `jumlah_sepatu`, `total`) VALUES
-(98, 'TR120120200001', 5, 'Deep Clean', 1, 25000);
-
 -- --------------------------------------------------------
 
 --
@@ -57,7 +50,7 @@ CREATE TABLE `pegawai` (
   `no_hp` varchar(13) NOT NULL,
   `level` varchar(10) NOT NULL,
   `username` varchar(16) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,7 +59,7 @@ CREATE TABLE `pegawai` (
 
 INSERT INTO `pegawai` (`id_pegawai`, `nm_pegawai`, `alamat_pegawai`, `no_hp`, `level`, `username`, `password`) VALUES
 (1, 'novando', 'jember', '087852459366', 'pegawai', 'novan', '85db37771715be103a787ae6c9fe3d08'),
-(3, 'fahmi', 'jember', '081244553535', 'superadmin', 'fahmi', '41851c2c39e9729d51870dc74e098950');
+(3, 'root', 'jember', '081244553535', 'superadmin', 'root', '41851c2c39e9729d51870dc74e098950');
 
 -- --------------------------------------------------------
 
@@ -75,11 +68,10 @@ INSERT INTO `pegawai` (`id_pegawai`, `nm_pegawai`, `alamat_pegawai`, `no_hp`, `l
 --
 
 CREATE TABLE `transaksi` (
-  `id_transaksi` int(10) NOT NULL,
   `invoice` varchar(30) NOT NULL,
   `tanggal` date NOT NULL,
   `nama_user` varchar(30) NOT NULL,
-  `no_hp` int(11) NOT NULL,
+  `no_hp` varchar(13) NOT NULL,
   `alamat_user` varchar(30) NOT NULL,
   `jumlah_sepatu` int(11) NOT NULL,
   `status` text NOT NULL,
@@ -119,7 +111,8 @@ INSERT INTO `treatment` (`id_treatment`, `nama_treatment`, `deskripsi`, `harga`)
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail`),
-  ADD KEY `detail_transaksi_ibfk_1` (`id_treatment`);
+  ADD KEY `detail_transaksi_ibfk_1` (`id_treatment`),
+  ADD KEY `detail_transaksi_ibfk_2` (`invoice`);
 
 --
 -- Indeks untuk tabel `pegawai`
@@ -131,7 +124,7 @@ ALTER TABLE `pegawai`
 -- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`id_transaksi`);
+  ADD PRIMARY KEY (`invoice`);
 
 --
 -- Indeks untuk tabel `treatment`
@@ -147,19 +140,13 @@ ALTER TABLE `treatment`
 -- AUTO_INCREMENT untuk tabel `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
   MODIFY `id_pegawai` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT untuk tabel `transaksi`
---
-ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `treatment`
@@ -175,7 +162,8 @@ ALTER TABLE `treatment`
 -- Ketidakleluasaan untuk tabel `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  ADD CONSTRAINT `detail_transaksi_ibfk_1` FOREIGN KEY (`id_treatment`) REFERENCES `treatment` (`id_treatment`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `detail_transaksi_ibfk_1` FOREIGN KEY (`id_treatment`) REFERENCES `treatment` (`id_treatment`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `detail_transaksi_ibfk_2` FOREIGN KEY (`invoice`) REFERENCES `transaksi` (`invoice`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
