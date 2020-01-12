@@ -82,6 +82,8 @@
                       <tbody>
                        <?php 
                         foreach ($list_transaksi->result_array() as $m):
+                              $id_transaksi=$m['id_transaksi'];
+
                               $invoice=$m['invoice'];
  
                               $tanggal=$m['tanggal'];
@@ -112,7 +114,7 @@
                               <div class="row justify-content-center">
                                 <a href="<?php echo site_url('admin/transaksi/detail_transaksi/'.$invoice)?>" class="btn btn-info btn-circle"><i class="far fa-edit"></i></a>
                                 <a href="<?php echo site_url('admin/transaksi/editstatus/'.$invoice)?>" class="btn btn-info btn-circle"><i class="fas fa-info-circle"></i></a>
-                                <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                <a href="<?php echo site_url('admin/transaksi/hapustransaksi/'.$id_transaksi)?>" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                               </div>
                           </td>
                         </tr>

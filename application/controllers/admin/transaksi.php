@@ -90,4 +90,10 @@ class transaksi extends CI_Controller {
 				$this->m_transaksi->update_status($where,$data,'transaksi');
 				redirect('admin/transaksi');
 			}
+	public function hapustransaksi($id_transaksi)
+		{
+			$where = array('id_transaksi' => $id_transaksi);
+			$this->m_transaksi->hapus_transaksi($where,'transaksi');
+			redirect('admin/transaksi');
+		}
 }
