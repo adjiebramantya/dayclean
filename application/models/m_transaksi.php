@@ -70,7 +70,7 @@
 		}
 
 		function kode(){
-			$this->db->SELECT('right(transaksi.id_transaksi,2) as id',false);
+			$this->db->SELECT('right(transaksi.invoice,2) as id',false);
 			$this->db->order_by('id','DESC');
 			$this->db->limit(1);
 			$query=$this->db->get('transaksi');
