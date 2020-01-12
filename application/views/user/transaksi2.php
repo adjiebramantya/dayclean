@@ -97,7 +97,7 @@
                     <input type="text" name="jumlah_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                 </div>
                 <div class="row ">
-                <button type="submit" style="float: right;" class="btn btn-primary btn-rounded mb-2 mr-2">Tambah Sepatu</button>
+                <button type="submit" style="float: right;" class="btn btn-primary btn-rounded">Tambah Sepatu</button>
                 </div>
                 </form>
                 <div class="row table-responsive">
@@ -133,18 +133,24 @@
                 <form action="<?php echo site_url('user/transaksi/simpan_total/'.$invoice);?>" method="post" >
                 <div class="row">
                   <div class="col-sm-4">
-                    <div class="form-group">
+                    <div class="form-group" hidden>
                         <label for="exampleFormControlInput1">Jumlah Total Sepatu</label>
                         <input type="text" name="total_sepatu" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?php echo $sum_total_sepatu->total_sepatu; ?>" readonly>
                     </div>
-                  </div>
-                  <div class="col-sm-3">
                     <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Total Sepatu : <?php echo number_format($sum_total_sepatu->total_sepatu); ?></label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group" hidden>
                         <label for="exampleFormControlInput1">Total Harga</label>
                         <input type="text" name="total_harga" class="form-control" id="exampleFormControlInput1" placeholder="" value="<?php echo $sum_total->total_semua; ?>" readonly>
                     </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Total Harga : Rp.<?php echo number_format($sum_total->total_semua); ?></label>
+                    </div>
                   </div>
-                  <div class="col-sm-5">
+                  <div class="col-sm-4">
                     <div class="form-group">
                         <button type="submit" style="float: right;" class="btn btn-success">Selesai dan Lanjut WA</button>
                     </div>
