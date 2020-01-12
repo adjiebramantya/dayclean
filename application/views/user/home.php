@@ -104,11 +104,11 @@
                   <h1 class="title2"> Kami Telah Mencuci </h1>
                 </div>
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2"><?= $jumlah_sepatu->jumlah ?></h1>
+                  <h1 class="title2"><?= $jumlah_sepatu->jumlah ?> pasang sepatu</h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1">Pasang Sepatu dan akan terus bertambah</h2>
+                  <h2 class="title1">dan akan terus bertambah</h2>
                 </div>
               </div>
             </div>
