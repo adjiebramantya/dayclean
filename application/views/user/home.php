@@ -177,27 +177,25 @@
           <div class="well-middle">
             <div class="single-well">
               <a href="#">
-                <h4 class="sec-head">project Maintenance</h4>
+                <h4 class="sec-head"></h4>
               </a>
               <p>
-                Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
+                Disini kami menyediakan jasa laundry cuci sepatu dan perawatan sepatu anda yang rusak, warna pudar, dan kerusakan lainnya.Prioritas kami adalah kebanggaan anda terhadap jasa kami. Happy Order !
               </p>
               <ul>
                 <li>
-                  <i class="fa fa-check"></i> Interior design Package
+                  <i class="fa fa-check"></i> Cepat
                 </li>
                 <li>
-                  <i class="fa fa-check"></i> Building House
+                  <i class="fa fa-check"></i> Murah
                 </li>
                 <li>
-                  <i class="fa fa-check"></i> Reparing of Residentail Roof
+                  <i class="fa fa-check"></i> Harum
                 </li>
                 <li>
-                  <i class="fa fa-check"></i> Renovaion of Commercial Office
+                  <i class="fa fa-check"></i> Free Pick Up and Delivery
                 </li>
-                <li>
-                  <i class="fa fa-check"></i> Make Quality Products
-                </li>
+                
               </ul>
             </div>
           </div>
@@ -315,14 +313,14 @@
                 <div class="panel-heading">
                   <h4 class="check-title">
 											<a data-toggle="collapse" class="active" data-parent="#accordion" href="#check1">
-                        <span class="acc-icons"></span>Consectetur adipisicing elit.
+                        <span class="acc-icons"></span>Cara Pesannya bagaimana kak?
 											</a>
 										</h4>
                 </div>
                 <div id="check1" class="panel-collapse collapse in">
                   <div class="panel-body">
                     <p>
-                      Redug Lefes dolor sit amet, consectetur adipisicing elit. Aspernatur, tempore, commodi quas mollitia dolore magnam quidem repellat, culpa voluptates laboriosam maiores alias accusamus recusandae vero
+                      Klik order, kemudian isi biodata pelanggan, dan klik simpan
                     </p>
                   </div>
                 </div>
@@ -333,14 +331,14 @@
                 <div class="panel-heading">
                   <h4 class="check-title">
 											<a data-toggle="collapse" data-parent="#accordion" href="#check2">
-                        <span class="acc-icons"></span> Dolore magnam quidem repellat.
+                        <span class="acc-icons"></span> Cara penginputan sepatu yang ingin di laundry bagaimana kak?
 											</a>
 										</h4>
                 </div>
                 <div id="check2" class="panel-collapse collapse">
                   <div class="panel-body">
                     <p>
-                      Redug Lefes dolor sit amet, consectetur adipisicing elit. Aspernatur, tempore, commodi quas mollitia dolore magnam quidem repellat, culpa voluptates laboriosam maiores alias accusamus recusandae vero aperiam sint nulla beatae eos.
+                      Saat selesai penginputan, disana terdapat form pengisian jumlah sepatu yang akan dilaundry dan keterangan sepatu yang akan di laundry.
                     </p>
                   </div>
                 </div>
@@ -351,37 +349,20 @@
                 <div class="panel-heading">
                   <h4 class="check-title">
 											<a data-toggle="collapse" data-parent="#accordion" href="#check3">
-                        <span class="acc-icons"></span>Redug Lefes dolor sit.
+                        <span class="acc-icons"></span>Untuk re-paint bagaimana kak?
 											</a>
 										</h4>
                 </div>
                 <div id="check3" class="panel-collapse collapse ">
                   <div class="panel-body">
                     <p>
-                      Redug Lefes dolor sit amet, consectetur adipisicing elit. Aspernatur, tempore, commodi quas mollitia dolore magnam quidem repellat, culpa voluptates laboriosam maiores alias accusamus recusandae vero aperiam sint nulla beatae eos.
+                      Kita gunakan pewarna untuk re-paint sepatu pelanggan. kita sesuaikan dengan warna sepatu aslinya atau sesuai minat pelanggan
                     </p>
                   </div>
                 </div>
               </div>
               <!-- End Panel Default -->
-              <!-- Panel Default -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="check-title">
-											<a data-toggle="collapse" data-parent="#accordion" href="#check4">
-                        <span class="acc-icons"></span>Maiores alias accusamus
-											</a>
-										</h4>
-                </div>
-                <div id="check4" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    <p>
-                      Redug Lefes dolor sit amet, consectetur adipisicing elit. Aspernatur, tempore, commodi quas mollitia dolore magnam quidem repellat, culpa voluptates laboriosam maiores alias accusamus recusandae vero aperiam sint nulla beatae eos.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- End Panel Default -->
+              
             </div>
           </div>
         </div>
@@ -529,53 +510,7 @@
   </div>
   <!-- awesome-portfolio end -->
   <!-- Start Testimonials -->
-  <div class="testimonials-area">
-    <div class="testi-inner area-padding">
-      <div class="testi-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <!-- Start testimonials Start -->
-            <div class="testimonial-content text-center">
-              <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
-              <!-- start testimonial carousel -->
-              <div class="testimonial-carousel">
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Boby</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Jhon</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Fleming</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-              </div>
-            </div>
-            <!-- End testimonials end -->
-          </div>
-          <!-- End Right Feature -->
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- End Testimonials -->
 
   <!-- Start contact Area -->
@@ -597,8 +532,8 @@
               <div class="single-icon">
                 <i class="fa fa-mobile"></i>
                 <p>
-                  Call: +1 5589 55488 55<br>
-                  <span>Monday-Friday (9am-5pm)</span>
+                  Call: +62 7884-249-654<br>
+                  <span>Senin-Minggu (09:00 - 17:00)</span>
                 </p>
               </div>
             </div>
@@ -609,8 +544,8 @@
               <div class="single-icon">
                 <i class="fa fa-envelope-o"></i>
                 <p>
-                  Email: info@example.com<br>
-                  <span>Web: www.example.com</span>
+                  Email: fahmimalik@gmail.com<br>
+                  <span>Web: www.daycleanjember.com</span>
                 </p>
               </div>
             </div>
@@ -621,8 +556,8 @@
               <div class="single-icon">
                 <i class="fa fa-map-marker"></i>
                 <p>
-                  Location: A108 Adam Street<br>
-                  <span>NY 535022, USA</span>
+                  Location: Jalan Hayam Wuruk I<br>
+                  <span>Jember</span>
                 </p>
               </div>
             </div>

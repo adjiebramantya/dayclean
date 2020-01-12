@@ -9,14 +9,14 @@
                   <h2><span>DayClean</span> Jember</h2>
                 </div>
 
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                <p>Prioritas kami adalah kebanggan anda terhadap jasa kami</p>
                 <div class="footer-icons">
                   <ul>
                     <li>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
+                      <a href="https://www.instagram.com/daycleanjember/"><i class="fa fa-instagram"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-whatsapp"></i></a>
+                      <a href="https://api.whatsapp.com/send?phone=087884249651&text=Halo%20admin"><i class="fa fa-whatsapp"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -29,12 +29,11 @@
               <div class="footer-head">
                 <h4>information</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                  DayClean Jember
                 </p>
                 <div class="footer-contacts">
-                  <p><span>Tel:</span> +123 456 789</p>
-                  <p><span>Email:</span> contact@example.com</p>
-                  <p><span>Working Hours:</span> 9am-5pm</p>
+                  <p><span>Tel:</span> +62 8788-4249-651</p>
+                  <p><span>Working Hours:</span> 09:00 - 17:00</p>
                 </div>
               </div>
             </div>
