@@ -167,7 +167,7 @@
           <div class="well-left">
             <div class="single-well">
               <a href="#">
-								  <img src="<?php echo base_url('lib_user/img/about/1.jpg') ?>" alt="">
+								  <img src="<?php echo base_url('lib_user/img/about/2.jpg') ?>" alt="">
 								</a>
             </div>
           </div>

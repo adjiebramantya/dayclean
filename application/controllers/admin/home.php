@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	public function __construct()
 		{
 			parent::__construct();
-
+						$this->load->model("m_transaksi");
 			if($this->session->userdata('status') != "login"){
 			redirect(base_url("admin/clogin"));
 
@@ -15,7 +15,10 @@ class Home extends CI_Controller {
 		}
 	public function index()
 	{
-		$this->load->view('admin/index');
+		$tanggal = date('Y-m-d');
+		$data = array('duwekperhari'=>$this->m_transaksi->laporan_harian_sum($tanggal)
+				);
+		$this->load->view('admin/index',$data);
 	}
 	
 
